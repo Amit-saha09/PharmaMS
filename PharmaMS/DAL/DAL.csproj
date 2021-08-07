@@ -43,6 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,12 +53,97 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cart.cs">
+      <DependentUpon>PharmaAssist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cartitem.cs">
+      <DependentUpon>PharmaAssist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cartstatu.cs">
+      <DependentUpon>PharmaAssist.tt</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
+    <Compile Include="Customer.cs">
+      <DependentUpon>PharmaAssist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>PharmaAssist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <DependentUpon>PharmaAssist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Loginaccess.cs">
+      <DependentUpon>PharmaAssist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Medicine.cs">
+      <DependentUpon>PharmaAssist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Medstatu.cs">
+      <DependentUpon>PharmaAssist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Medtype.cs">
+      <DependentUpon>PharmaAssist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>PharmaAssist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Orderstatu.cs">
+      <DependentUpon>PharmaAssist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PharmaAssist.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PharmaAssist.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PharmaAssist.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PharmaAssist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PharmaAssist.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PharmaAssist.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Regstatu.cs">
+      <DependentUpon>PharmaAssist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RequestMedicine.cs">
+      <DependentUpon>PharmaAssist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Requeststatu.cs">
+      <DependentUpon>PharmaAssist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usertype.cs">
+      <DependentUpon>PharmaAssist.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <EntityDeploy Include="PharmaAssist.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PharmaAssist.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PharmaAssist.edmx.diagram">
+      <DependentUpon>PharmaAssist.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PharmaAssist.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PharmaAssist.edmx</DependentUpon>
+      <LastGenOutput>PharmaAssist.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PharmaAssist.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PharmaAssist.edmx</DependentUpon>
+      <LastGenOutput>PharmaAssist.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
