@@ -13,7 +13,9 @@ namespace BLL.MapperConfig
     {
         public AutoMapperSettings()
         {
-            CreateMap<CartModel, Cart>().ForMember(e => e.Cartitems, d => d.Ignore());
+            CreateMap<CartModel, Cart>()
+                .ForMember(e => e.Cartitems, d => d.Ignore())
+                .ForMember(e => e.Orders, d => d.Ignore());
             CreateMap<Cart, CartModel>();
             CreateMap<Cart, CartDetail>();
         }
