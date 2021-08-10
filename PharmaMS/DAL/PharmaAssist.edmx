@@ -19,7 +19,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="cart_by" Type="int" Nullable="false" />
+          <Property Name="customer_id" Type="int" Nullable="false" />
           <Property Name="cartstatus_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Cartstatus">
@@ -110,7 +110,7 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="cart_id" Type="int" Nullable="false" />
           <Property Name="orderstatus_id" Type="int" Nullable="false" />
-          <Property Name="delivery_by" Type="int" Nullable="false" />
+          <Property Name="employee_id" Type="int" Nullable="false" />
           <Property Name="appx_del_date" Type="date" />
         </EntityType>
         <EntityType Name="Orderstatus">
@@ -135,7 +135,7 @@
           <Property Name="name" Type="varchar" MaxLength="250" Nullable="false" />
           <Property Name="quantity" Type="int" Nullable="false" />
           <Property Name="medtype_id" Type="int" Nullable="false" />
-          <Property Name="requested_by" Type="int" Nullable="false" />
+          <Property Name="customer_id" Type="int" Nullable="false" />
           <Property Name="requeststatus_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Requeststatus">
@@ -196,7 +196,7 @@
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="Carts">
-              <PropertyRef Name="cart_by" />
+              <PropertyRef Name="customer_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -304,7 +304,7 @@
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="Orders">
-              <PropertyRef Name="delivery_by" />
+              <PropertyRef Name="employee_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -328,7 +328,7 @@
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="RequestMedicines">
-              <PropertyRef Name="requested_by" />
+              <PropertyRef Name="customer_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -463,7 +463,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="cart_by" Type="Int32" Nullable="false" />
+          <Property Name="customer_id" Type="Int32" Nullable="false" />
           <Property Name="cartstatus_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Cartitems" Relationship="Self.FK_Cartitems_Carts" FromRole="Carts" ToRole="Cartitems" />
           <NavigationProperty Name="Cartstatu" Relationship="Self.FK_Carts_Cartstatus" FromRole="Carts" ToRole="Cartstatus" />
@@ -576,7 +576,7 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="cart_id" Type="Int32" Nullable="false" />
           <Property Name="orderstatus_id" Type="Int32" Nullable="false" />
-          <Property Name="delivery_by" Type="Int32" Nullable="false" />
+          <Property Name="employee_id" Type="Int32" Nullable="false" />
           <Property Name="appx_del_date" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Cart" Relationship="Self.FK_Orders_Carts" FromRole="Orders" ToRole="Carts" />
           <NavigationProperty Name="Employee" Relationship="Self.FK_Orders_Employees" FromRole="Orders" ToRole="Employees" />
@@ -606,7 +606,7 @@
           <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="quantity" Type="Int32" Nullable="false" />
           <Property Name="medtype_id" Type="Int32" Nullable="false" />
-          <Property Name="requested_by" Type="Int32" Nullable="false" />
+          <Property Name="customer_id" Type="Int32" Nullable="false" />
           <Property Name="requeststatus_id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Customer" Relationship="Self.FK_RequestMedicines_Customers" FromRole="RequestMedicines" ToRole="Customers" />
           <NavigationProperty Name="Medtype" Relationship="Self.FK_RequestMedicines_Medtypes" FromRole="RequestMedicines" ToRole="Medtypes" />
@@ -672,7 +672,7 @@
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="Carts">
-              <PropertyRef Name="cart_by" />
+              <PropertyRef Name="customer_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -708,7 +708,7 @@
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="RequestMedicines">
-              <PropertyRef Name="requested_by" />
+              <PropertyRef Name="customer_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -732,7 +732,7 @@
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="Orders">
-              <PropertyRef Name="delivery_by" />
+              <PropertyRef Name="employee_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -832,7 +832,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="PharmaAssistEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="PharmaAssistEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Cartitems" EntityType="Self.Cartitem" />
           <EntitySet Name="Carts" EntityType="Self.Cart" />
           <EntitySet Name="Cartstatus" EntityType="Self.Cartstatu" />
@@ -923,7 +923,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="PharmaAssistModelStoreContainer" CdmEntityContainer="PharmaAssistEntities">
+        <EntityContainerMapping StorageEntityContainer="PharmaAssistModelStoreContainer" CdmEntityContainer="PharmaAssistEntities1">
           <EntitySetMapping Name="Cartitems">
             <EntityTypeMapping TypeName="PharmaAssistModel.Cartitem">
               <MappingFragment StoreEntitySet="Cartitems">
@@ -938,7 +938,7 @@
             <EntityTypeMapping TypeName="PharmaAssistModel.Cart">
               <MappingFragment StoreEntitySet="Carts">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="cart_by" ColumnName="cart_by" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
                 <ScalarProperty Name="cartstatus_id" ColumnName="cartstatus_id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1038,7 +1038,7 @@
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="cart_id" ColumnName="cart_id" />
                 <ScalarProperty Name="orderstatus_id" ColumnName="orderstatus_id" />
-                <ScalarProperty Name="delivery_by" ColumnName="delivery_by" />
+                <ScalarProperty Name="employee_id" ColumnName="employee_id" />
                 <ScalarProperty Name="appx_del_date" ColumnName="appx_del_date" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1066,7 +1066,7 @@
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="quantity" ColumnName="quantity" />
                 <ScalarProperty Name="medtype_id" ColumnName="medtype_id" />
-                <ScalarProperty Name="requested_by" ColumnName="requested_by" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
                 <ScalarProperty Name="requeststatus_id" ColumnName="requeststatus_id" />
               </MappingFragment>
             </EntityTypeMapping>

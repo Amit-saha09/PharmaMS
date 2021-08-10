@@ -13,10 +13,10 @@ namespace DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PharmaAssistEntities : DbContext
+    public partial class PharmaAssistEntities1 : DbContext
     {
-        public PharmaAssistEntities()
-            : base("name=PharmaAssistEntities")
+        public PharmaAssistEntities1()
+            : base("name=PharmaAssistEntities1")
         {
         }
     

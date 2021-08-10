@@ -17,7 +17,7 @@ namespace DAL
         public int id { get; set; }
         public int cart_id { get; set; }
         public int orderstatus_id { get; set; }
-        public int delivery_by { get; set; }
+        public int employee_id { get; set; }
         public Nullable<System.DateTime> appx_del_date { get; set; }
     
         public virtual Cart Cart { get; set; }

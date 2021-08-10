@@ -22,7 +22,7 @@ namespace DAL
         }
     
         public int id { get; set; }
-        public int cart_by { get; set; }
+        public int customer_id { get; set; }
         public int cartstatus_id { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

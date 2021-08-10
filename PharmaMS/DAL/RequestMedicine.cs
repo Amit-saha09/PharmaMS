@@ -18,7 +18,7 @@ namespace DAL
         public string name { get; set; }
         public int quantity { get; set; }
         public int medtype_id { get; set; }
-        public int requested_by { get; set; }
+        public int customer_id { get; set; }
         public int requeststatus_id { get; set; }
     
         public virtual Customer Customer { get; set; }
