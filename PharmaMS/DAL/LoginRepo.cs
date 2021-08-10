@@ -19,9 +19,9 @@ namespace DAL
             return context.Logins.ToList();
         }
 
-        public static Login GetUserLogin(Login user)
+        public static Login GetUserLogin(string email, string password)
         {
-            return context.Logins.FirstOrDefault(c => c.email == user.email && c.password == user.password);
+            return context.Logins.FirstOrDefault(c => c.email == email && c.password ==password);
         }
 
     }
