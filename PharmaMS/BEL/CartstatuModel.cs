@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace BEL
 {
-    public class Class1
+    public class CartstatuModel
     {
+        public int id { get; set; }
+        public string status { get; set; }
     }
 }

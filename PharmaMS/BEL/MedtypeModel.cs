@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL
+namespace BEL
 {
-    public class Class1
+    public class MedtypeModel
     {
+        public int id { get; set; }
+        public string type { get; set; }
     }
 }

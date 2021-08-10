@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAL
+namespace BEL
 {
-    public class Class1
+    public class MedstatuModel
     {
+        public int id { get; set; }
+        public string status { get; set; }
     }
 }

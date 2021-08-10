@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>eef06f75-b510-4d73-908c-f2d0627dd573</ProjectGuid>
+    <ProjectGuid>{EEF06F75-B510-4D73-908C-F2D0627DD573}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BEL</RootNamespace>
@@ -31,24 +31,46 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CartDetail.cs" />
+    <Compile Include="CartitemModel.cs" />
+    <Compile Include="CartModel.cs" />
+    <Compile Include="CartstatuDetail.cs" />
+    <Compile Include="CartstatuModel.cs" />
+    <Compile Include="CustomerDetail.cs" />
+    <Compile Include="CustomerModel.cs" />
+    <Compile Include="EmployeeDetail.cs" />
+    <Compile Include="EmployeeModel.cs" />
+    <Compile Include="LoginaccessDetail.cs" />
+    <Compile Include="LoginaccessModel.cs" />
+    <Compile Include="LoginDetail.cs" />
+    <Compile Include="LoginModel.cs" />
+    <Compile Include="MedicineDetail.cs" />
+    <Compile Include="MedicineModel.cs" />
+    <Compile Include="MedstatuDetail.cs" />
+    <Compile Include="MedstatuModel.cs" />
+    <Compile Include="MedtypeDetail.cs" />
+    <Compile Include="MedtypeModel.cs" />
+    <Compile Include="OrderModel.cs" />
+    <Compile Include="OrderstatuDetail.cs" />
+    <Compile Include="OrderstatuModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegstatuDetail.cs" />
+    <Compile Include="RegstatuModel.cs" />
+    <Compile Include="RequestMedicineModel.cs" />
+    <Compile Include="RequeststatuDetail.cs" />
+    <Compile Include="RequeststatuModel.cs" />
+    <Compile Include="UsertypeDetail.cs" />
+    <Compile Include="UsertypeModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>

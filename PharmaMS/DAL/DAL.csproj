@@ -62,7 +62,7 @@
     <Compile Include="Cartstatu.cs">
       <DependentUpon>PharmaAssist.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
+    <Compile Include="LoginRepo.cs" />
     <Compile Include="Customer.cs">
       <DependentUpon>PharmaAssist.tt</DependentUpon>
     </Compile>
