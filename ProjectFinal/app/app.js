@@ -3,7 +3,7 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
 
     $routeProvider
     .when("/", {
-        templateUrl : "views/pages/demopage.html"
+        templateUrl : "views/pages/demo2.html"
     })
     .when("/demo", {
         templateUrl : "views/pages/demopage.html",
