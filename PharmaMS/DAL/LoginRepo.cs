@@ -49,6 +49,14 @@ namespace DAL
            // context.Logins.
         }
 
+        public static void ApproveAllRegStatus()
+        {
+            using (var p2 = new PharmaAssistEntities1())
+            {
+                int e = p2.Database.ExecuteSqlCommand("UPDATE Logins SET regstatus_id = '1', loginaccess_id = '1' WHERE regstatus_id = '3';");
+            }
+        }
+
         public static void DeleteUser(Login d)
         {
             context.Logins.Remove(d);

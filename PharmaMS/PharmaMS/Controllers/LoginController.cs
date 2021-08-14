@@ -105,6 +105,12 @@ namespace PharmaMS.Controllers
             LoginService.UpdateUserInfo(userInfo);
         }
 
+        [Route("user/update/registration/approve/all")]
+        public void PutUserRegApproveAll()
+        {
+            LoginService.ApproveAllRegStatus();
+        }
+
         [Route("user/update/registration/reject/{id}")]
         public void PutUserRegReject([FromUri] int id)
         {

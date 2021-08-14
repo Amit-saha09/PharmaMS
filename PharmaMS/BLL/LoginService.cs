@@ -43,6 +43,11 @@ namespace BLL
             LoginRepo.UpdateUserInfo(data);
         }
 
+        public static void ApproveAllRegStatus()
+        {
+            LoginRepo.ApproveAllRegStatus();
+        }
+
         public static void DeleteUser(int id)
         {
             Login data = LoginRepo.GetUserByID(id);
