@@ -20,10 +20,14 @@ namespace BLL.MapperConfig
             CreateMap<Cart, CartDetail>();
 
 
-            CreateMap<LoginModel, Login>();
+            CreateMap<LoginModel, Login>()
+                .ForMember(e => e.Loginaccess, d => d.Ignore())
+                .ForMember(e => e.Regstatu, d => d.Ignore())
+                .ForMember(e => e.Usertype, d => d.Ignore());
 
             CreateMap<Login, LoginModel>();
             CreateMap<Login, LoginDetail>();
+            CreateMap<LoginModel, LoginDetail>();
 
             /* Do Not Delete
             CreateMap<Login, UsertypeModel>();
@@ -35,6 +39,14 @@ namespace BLL.MapperConfig
             CreateMap<Login, RegstatuModel>();
             CreateMap<Login, RegstatuDetail>();
             */
+
+            CreateMap<MedicineModel, Medicine>()
+                .ForMember(e => e.Medtype, m => m.Ignore())
+                .ForMember(e => e.Medstatu, m => m.Ignore());
+
+            CreateMap<Medicine, MedicineModel>();
+            CreateMap<Medicine, MedicineDetail>();
+            CreateMap<MedstatuModel, MedicineDetail>();
         }
     }
 }

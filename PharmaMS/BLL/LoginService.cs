@@ -23,5 +23,23 @@ namespace BLL
             var data = AutoMapper.Mapper.Map<Login, LoginModel>(Logins);
             return data;
         }
+
+        public static void AddUser(LoginModel n)
+        {
+            var data = AutoMapper.Mapper.Map<LoginModel, Login>(n);
+            LoginRepo.AddUser(data);
+        }
+
+        public static void UpdateUser(LoginModel u, int id)
+        {
+            var data = AutoMapper.Mapper.Map<LoginModel, Login>(u);
+            //LoginRepo.UpdateUser(data, id);
+        }
+
+        public static void DeleteUser(int id)
+        {
+            Login data = LoginRepo.GetUserByID(id);
+            LoginRepo.DeleteUser(data);
+        }
     }
 }

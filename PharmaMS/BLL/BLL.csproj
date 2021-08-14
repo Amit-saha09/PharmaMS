@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="LoginService.cs" />
     <Compile Include="MapperConfig\AutoMapperSettings.cs" />
+    <Compile Include="MedicineService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

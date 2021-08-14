@@ -21,6 +21,7 @@ namespace PharmaMS.Controllers
             return LoginService.GetLogins();
         }
 
+        /*
         [Route("user/email/{email}/password/{password}")]
         public LoginModel GetUser([FromUri]string email, [FromUri] string password)
         {
@@ -28,6 +29,31 @@ namespace PharmaMS.Controllers
             user.email = email;
             user.password = password;
             return LoginService.GetLogin(user);
+        }
+        */
+
+        [Route("user")]
+        public LoginModel GetLogin([FromBody]LoginModel user)
+        {
+            return LoginService.GetLogin(user);
+        }
+
+        [Route("user/add")]
+        public void AddUser(LoginModel n)
+        {
+            LoginService.AddUser(n);
+        }
+
+        [Route("user/update/{id}")]
+        public void UpdateUser([FromBody]LoginModel n, [FromUri] int id)
+        {
+            //LoginService.UpdateUser(n);
+        }
+
+        [Route("user/delete/{id}")]
+        public void DeleteUser([FromUri] int id)
+        {
+            LoginService.DeleteUser(id);
         }
     }
 }

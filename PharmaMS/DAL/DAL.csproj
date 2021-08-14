@@ -78,6 +78,7 @@
     <Compile Include="Medicine.cs">
       <DependentUpon>PharmaAssist.tt</DependentUpon>
     </Compile>
+    <Compile Include="MedicineRepo.cs" />
     <Compile Include="Medstatu.cs">
       <DependentUpon>PharmaAssist.tt</DependentUpon>
     </Compile>
