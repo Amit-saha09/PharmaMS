@@ -46,7 +46,6 @@ namespace DAL
             oldData.loginaccess_id = u.loginaccess_id;
             oldData.regstatus_id = u.regstatus_id;
             context.SaveChanges();
-           // context.Logins.
         }
 
         public static void ApproveAllRegStatus()

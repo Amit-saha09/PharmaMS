@@ -16,5 +16,8 @@ namespace BEL
         public string description { get; set; }
         public int medtype_id { get; set; }
         public int medstatus_id { get; set; }
+
+        public virtual MedstatuModel Medstatu { get; set; }
+        public virtual MedtypeModel Medtype { get; set; }
     }
 }

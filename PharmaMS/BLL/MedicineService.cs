@@ -41,5 +41,11 @@ namespace BLL
             Medicine data = MedicineRepo.GetMedicineByID(id);
             MedicineRepo.DeleteMedicine(data);
         }
+
+        public static void UpdateMedicineInfo(MedicineModel med)
+        {
+            var data = AutoMapper.Mapper.Map<MedicineModel, Medicine>(med);
+            MedicineRepo.UpdateMedicineInfo(data);
+        }
     }
 }

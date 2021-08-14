@@ -42,5 +42,18 @@ namespace DAL
             context.Medicines.Remove(id);
             context.SaveChanges();
         }
+
+        public static void UpdateMedicineInfo(Medicine med)
+        {
+            var oldData = (from a in context.Medicines where a.id == med.id select a).FirstOrDefault();
+            oldData.name = med.name;
+            oldData.quantity = med.quantity;
+            oldData.price = med.price;
+            oldData.company = med.company;
+            oldData.description = med.description;
+            oldData.medtype_id = med.medtype_id;
+            oldData.medstatus_id = med.medstatus_id;
+            context.SaveChanges();
+        }
     }
 }
