@@ -47,6 +47,12 @@ namespace BLL.MapperConfig
             CreateMap<Medicine, MedicineModel>();
             CreateMap<Medicine, MedicineDetail>();
             CreateMap<MedstatuModel, MedicineDetail>();
+
+            CreateMap<EmployeeModel, Employee>().ForMember(e => e.login_id, m => m.Ignore());
+            CreateMap<Employee, EmployeeModel>();
+            CreateMap<Employee, EmployeeDetail>();
+            CreateMap<EmployeeModel, EmployeeDetail>();
+            CreateMap<EmployeeDetail, EmployeeModel>();
         }
     }
 }

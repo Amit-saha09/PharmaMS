@@ -18,5 +18,7 @@ namespace BEL
         public double salary { get; set; }
         public string image { get; set; }
         public int login_id { get; set; }
+
+        public virtual LoginModel Login { get; set; }
     }
 }
