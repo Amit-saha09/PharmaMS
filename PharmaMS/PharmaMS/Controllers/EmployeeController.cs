@@ -24,7 +24,7 @@ namespace PharmaMS.Controllers
 
             [Route("{id}")]
             [HttpGet]
-            public EmployeeModel GetEmployeebyID(int id)
+            public EmployeeModel GetEmployeebyID([FromUri]int id)
             {
                 return EmployeeService.GetEmployeebyID(id);
             }
@@ -36,12 +36,12 @@ namespace PharmaMS.Controllers
                 return EmployeeService.GetEmployeeByName();
             }
 
-            /*[Route("add")]
+            [Route("add")]
             [HttpPost]
-            public void AddEmployee(EmployeeModel em)
+            public void PostEmployee([FromBody]EmployeeModel em)
             {
                 EmployeeService.AddEmployee(em);
-            }*/
+            }
 
             [Route("delete/{id}")]
             public void DeleteEmployee([FromUri] int id)
