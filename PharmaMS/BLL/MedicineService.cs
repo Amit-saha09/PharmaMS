@@ -24,10 +24,11 @@ namespace BLL
             return med;
         }
 
-        public static List<string> GetMedicineByName()
+        public static List<MedicineModel> GetMedicineByName(string id)
         {
-            var data = MedicineRepo.GetMedicineByName();
-            return data;
+            var data = MedicineRepo.GetMedicineByName(id);
+            var med = AutoMapper.Mapper.Map<List<Medicine>, List<MedicineModel>>(data);
+            return med;
         }
 
         public static void AddMedicine(MedicineModel med)

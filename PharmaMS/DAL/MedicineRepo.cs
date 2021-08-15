@@ -25,9 +25,9 @@ namespace DAL
             return data;
         }
 
-        public static List<string> GetMedicineByName()
+        public static List<Medicine> GetMedicineByName(string id)
         {
-            var data = context.Medicines.Select(e => e.name).ToList();
+            var data = context.Set<Medicine>().Where(x => x.name.ToLower().Contains(id.ToLower())).ToList();
             return data;
         }
 

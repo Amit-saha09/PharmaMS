@@ -29,11 +29,11 @@ namespace PharmaMS.Controllers
             return MedicineService.GetMedicinebyID(id);
         }
 
-        [Route("name")]
+        [Route("name/{id}")]
         [HttpGet]
-        public List<string> GetMedicineByName()
+        public List<MedicineModel> GetMedicineByName([FromUri] string id)
         {
-            return MedicineService.GetMedicineByName();
+            return MedicineService.GetMedicineByName(id);
         }
 
         [Route("add")]
