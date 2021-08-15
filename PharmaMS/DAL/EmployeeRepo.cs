@@ -25,9 +25,9 @@ namespace DAL
             return data;
         }
 
-        public static List<string> GetEmployeeByName()
+        public static List<Employee> GetEmployeeByName(string id)
         {
-            var data = context.Employees.Select(e => e.name).ToList();
+            var data = context.Set<Employee>().Where(x => x.name.ToLower().Contains(id.ToLower())).ToList();
             return data;
         }
 

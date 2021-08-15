@@ -29,11 +29,11 @@ namespace PharmaMS.Controllers
                 return EmployeeService.GetEmployeebyID(id);
             }
 
-            [Route("name")]
+            [Route("name/{id}")]
             [HttpGet]
-            public List<string> GetEmployeeByName()
+            public List<EmployeeModel> GetEmployeeByName([FromUri] string id)
             {
-                return EmployeeService.GetEmployeeByName();
+                return EmployeeService.GetEmployeeByName(id);
             }
 
             [Route("add")]

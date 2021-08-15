@@ -24,10 +24,11 @@ namespace BLL
             return em;
         }
 
-        public static List<string> GetEmployeeByName()
+        public static List<EmployeeModel> GetEmployeeByName(string id)
         {
-            var data = EmployeeRepo.GetEmployeeByName();
-            return data;
+            var data = EmployeeRepo.GetEmployeeByName(id);
+            var em = AutoMapper.Mapper.Map<List<Employee>, List<EmployeeModel>>(data);
+            return em;
         }
 
         public static void AddEmployee(EmployeeModel em)
