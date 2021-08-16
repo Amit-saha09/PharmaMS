@@ -60,6 +60,7 @@
     <Compile Include="MedstatuModel.cs" />
     <Compile Include="MedtypeDetail.cs" />
     <Compile Include="MedtypeModel.cs" />
+    <Compile Include="OrderDetail.cs" />
     <Compile Include="OrderModel.cs" />
     <Compile Include="OrderstatuDetail.cs" />
     <Compile Include="OrderstatuModel.cs" />
