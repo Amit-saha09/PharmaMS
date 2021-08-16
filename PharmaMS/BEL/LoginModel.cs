@@ -15,8 +15,6 @@ namespace BEL
         public int loginaccess_id { get; set; }
         public int regstatus_id { get; set; }
 
-        public virtual LoginaccessModel Loginaccess { get; set; }
-        public virtual RegstatuModel Regstatu { get; set; }
-        public virtual UsertypeModel Usertype { get; set; }
+        
     }
 }
