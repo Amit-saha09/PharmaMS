@@ -12,7 +12,7 @@ namespace PharmaMS.Controllers
 {
     [EnableCorsAttribute("*", "*", "*")]
 
-    [RoutePrefix("api/logins")]
+    //[RoutePrefix("api/logins")]
     public class LoginController : ApiController
     {
         [Route("")]
@@ -32,13 +32,13 @@ namespace PharmaMS.Controllers
         }
         */
 
-        [Route("user")]
-        public LoginModel GetLogin([FromBody]LoginModel user)
+        [Route("api/login/GetUser")]
+        public LoginModel GetLogin(LoginModel user)
         {
             return LoginService.GetLogin(user);
         }
 
-        [Route("user/id/{id}")]
+        [Route("user")]
         public LoginModel GetLoginByID([FromUri] int id)
         {
             return LoginService.GetLoginByID(id);

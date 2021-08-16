@@ -17,8 +17,9 @@ namespace BEL
         public string address { get; set; }
         public double salary { get; set; }
         public string image { get; set; }
+        public string login_email { get; set; }
         public int login_id { get; set; }
 
-        public virtual LoginModel Login { get; set; }
+       
     }
 }

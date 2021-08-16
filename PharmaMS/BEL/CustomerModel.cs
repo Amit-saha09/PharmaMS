@@ -16,6 +16,7 @@ namespace BEL
         public string contact { get; set; }
         public string address { get; set; }
         public string image { get; set; }
+        public string login_email {get; set; }
         public int login_id { get; set; }
     }
 }
