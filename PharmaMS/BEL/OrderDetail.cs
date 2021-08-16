@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace BEL
 {
-    public class CartModel
+    public class OrderDetail
     {
         public int id { get; set; }
-        public int customer_id { get; set; }
-        public string cartstatus_status { get; set; }
-        public int cartstatus_id { get; set; }
+        public int cart_id { get; set; }
+        public int orderstatus_id { get; set; }
+        public int employee_id { get; set; }
     }
 }
