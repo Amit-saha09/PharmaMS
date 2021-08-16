@@ -15,7 +15,7 @@ namespace BEL
         public string company { get; set; }
         public string description { get; set; }
         public string medtype_type { get; set; }
-        public string medstatu_status{ get; set; }
+        public string medstatu_status { get; set; }
         public int medtype_id { get; set; }
         public int medstatus_id { get; set; }
 
