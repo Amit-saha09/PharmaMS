@@ -1,5 +1,3 @@
-<!-- Main Content -->
-
 <div class="main-content">
     <section class="section">
       <div class="section-body">
@@ -7,11 +5,39 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h4>Calendar</h4>
+                <h4>Export Table</h4>
               </div>
               <div class="card-body">
-                <div class="fc-overflow">
-                  <div id="myEvent"></div>
+                <div class="table-responsive">
+                  <table class="table table-striped table-hover" id="tableExport" style="width:100%;">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Date of Birth</th>
+                        <th>Blood group</th>
+                        <th>Gender</th>
+                        <th>Contact</th>
+                        <th>Address</th>
+                        <th>Salary</th>
+                        <th>Login Email</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                     <tr ng-repeat="e in employee">
+                        <td>{{e.name}}</td>
+                        <td>{{e.dob}}</td>
+                        <td>{{e.bloodgroup}}</td>
+                        <td>{{e.gender}}</td>
+                        <td>{{e.contact}}</td>
+                        <td>{{e.address}}</td>
+                        <td>{{e.salary}}</td>
+                        <td>{{e.login_email}}</td>
+                        
+                      </tr>
+                     
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
@@ -112,7 +138,7 @@
     </div>
   </div>
   <footer class="main-footer">
-  
-    <div class="footer-right">
-    </div>
+    
   </footer>
+</div>
+</div>

@@ -18,6 +18,25 @@
     <!-- Custom style CSS -->
     <link rel="stylesheet" href="content/assets/css/custom.css">
     <link rel='shortcut icon' type='image/x-icon' href='content/assets/img/favicon.ico' />
+    <!---------------------------------------------------------------------------------------------------------------------------------------->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+    <link rel="stylesheet" href="content/plugin/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="content/plugin/bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="content/fonts/poppins/poppins.css">
+    <link rel="stylesheet" href="content/plugin/fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="content/plugin/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="content/plugin/process-bar/tox-progress.css">
+    <link rel="stylesheet" href="content/plugin/owl-carouse/owl.carousel.min.css">
+    <link rel="stylesheet" href="content/plugin/owl-carouse/owl.theme.default.min.css">
+    <link rel="stylesheet" href="content/plugin/animsition/css/animate.css">
+    <link rel="stylesheet" href="content/plugin/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="content/plugin/mediaelement/mediaelementplayer.css">
+    <link rel="stylesheet" href="content/plugin/datetimepicker/bootstrap-datepicker3.css">
+    <link rel="stylesheet" href="content/plugin/datetimepicker/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="content/plugin/lightgallery/lightgallery.css">
+    <link rel="stylesheet" href="content/css/style.css">
+
+    <!------------------------------------------------------------------------------------------------------------------------------------->
     <script src="content/assets/js/app.min.js"></script>
   <!-- JS Libraies -->
   <script src="content/assets/bundles/fullcalendar/fullcalendar.min.js"></script>
@@ -37,12 +56,56 @@
   <!-- Page Specific JS File -->
   <script src="content/assets/js/page/chart-amchart.js"></script>
   <!-- Template JS File -->
+<!---------------------------------------------------------------------------------------------------------------------------->
 
+<script src="content/plugin/jquery/jquery-2.0.2.min.js"></script>
+<script src="content/plugin/jquery-ui/jquery-ui.min.js"></script>
+<script src="content/plugin/bootstrap/js/bootstrap.js"></script>
+<script src="content/plugin/process-bar/tox-progress.js"></script>
+<script src="content/plugin/waypoint/jquery.waypoints.min.js"></script>
+<script src="content/plugin/counterup/jquery.counterup.min.js"></script>
+<script src="content/plugin/owl-carouse/owl.carousel.min.js"></script>
+<script src="content/plugin/jquery-ui/jquery-ui.min.js"></script>
+<script src="content/plugin/mediaelement/mediaelement-and-player.js"></script>
+<script src="content/plugin/masonry/masonry.pkgd.min.js"></script>
+<script src="content/plugin/datetimepicker/moment.min.js"></script>
+<script src="content/plugin/datetimepicker/bootstrap-datepicker.min.js"></script>
+<script src="content/plugin/datetimepicker/bootstrap-datepicker.tr.min.js"></script>
+<script src="content/plugin/datetimepicker/bootstrap-datetimepicker.js"></script>
+<script src="content/plugin/datetimepicker/bootstrap-datetimepicker.fr.js"></script>
+
+<script src="content/plugin/lightgallery/picturefill.min.js"></script>
+<script src="content/plugin/lightgallery/lightgallery.js"></script>
+<script src="content/plugin/lightgallery/lg-pager.js"></script>
+<script src="content/plugin/lightgallery/lg-autoplay.js"></script>
+<script src="content/plugin/lightgallery/lg-fullscreen.js"></script>
+<script src="content/plugin/lightgallery/lg-zoom.js"></script>
+<script src="content/plugin/lightgallery/lg-hash.js"></script>
+<script src="content/plugin/lightgallery/lg-share.js"></script>
+<script src="content/plugin/sticky/jquery.sticky.js"></script>
+
+<script src="content/js/main.js"></script>
+
+<!------------------------------------------------------------------------------------------------------------------------------------->
     <title></title>
   </head>
   <body ng-app="myApp">
-    <div ng-include="'views/inc/top_nav.html'"></div>
-      <div ng-include="'views/inc/side_nav.html'"></div>
+
+    <div ng-switch="user" ng-controller="navController">
+      <div ng-switch-when="CUSTOMER">
+       
+        <div ng-include="'views/inc/side_nav.html'"></div>
+      </div>
+      <div ng-switch-when="boy">
+        <div ng-include="'views/inc/side_nav.html'"></div>
+      </div>
+      <div ng-switch-default>
+       
+      </div>
+  
+    </div>
+   
+   
     <div ng-view> 
 
     </div>
@@ -57,3 +120,8 @@
 <script src="app/controllers/demo.js"></script>
 <script src="app/controllers/demo2.js"></script>
 <script src="app/controllers/products.js"></script>
+<script src="app/controllers/navController.js"></script>
+<script src="app/controllers/medicinelist.js"></script>
+<script src="app/controllers/employee.js"></script>
+<script src="app/controllers/customer.js"></script>
+<script src="app/controllers/login.js"></script>
