@@ -13,8 +13,9 @@ namespace BLL.MapperConfig
     {
         public AutoMapperSettings()
         {
-           
-            
+
+            CreateMap<Customer, CustomerModel>();
+            CreateMap<CustomerModel, Customer>().ForMember(a => a.Login, b => b.Ignore());
 
 
             CreateMap<RequestMedicineModel, RequestMedicine>()

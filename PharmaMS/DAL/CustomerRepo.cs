@@ -48,7 +48,7 @@ namespace DAL
             oldData.gender = em.gender;
             oldData.contact = em.contact;
             oldData.address = em.address;
-            oldData.address = em.address;
+           
             oldData.image = em.image;
             context.SaveChanges();
         }

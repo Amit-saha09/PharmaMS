@@ -6,9 +6,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace PharmaMS.Controllers
 {
+    [EnableCorsAttribute("*", "*", "*")]
     public class CartitemController : ApiController
     {
        // [EnableCorsAttribute("*", "*", "*")]
@@ -42,7 +44,8 @@ namespace PharmaMS.Controllers
             CartitemModel ciInfo = new CartitemModel();
             ciInfo = CartitemService.GetCartitem(id);
             ciInfo.cart_id = n.cart_id;
-            ciInfo.med_id = n.quantity;
+            ciInfo.med_id = n.med_id;
+            ciInfo.quantity = n.quantity;
 
 
 

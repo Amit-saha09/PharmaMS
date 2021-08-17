@@ -91,19 +91,12 @@
   </head>
   <body ng-app="myApp">
 
-    <div ng-switch="user" ng-controller="navController">
-      <div ng-switch-when="CUSTOMER">
-       
+   
         <div ng-include="'views/inc/side_nav.html'"></div>
-      </div>
-      <div ng-switch-when="boy">
-        <div ng-include="'views/inc/side_nav.html'"></div>
-      </div>
-      <div ng-switch-default>
-       
-      </div>
+    
+     
   
-    </div>
+    
    
    
     <div ng-view> 

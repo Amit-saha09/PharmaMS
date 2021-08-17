@@ -1,11 +1,11 @@
 var app = angular.module("myApp", ["ngRoute"]);
-var user="dog";
+
 app.config(["$routeProvider","$locationProvider",function($routeProvider,$locationProvider) {
 
     $routeProvider
     .when("/", {
-        templateUrl : "views/pages/login.html",
-        controller:'login'
+        templateUrl : "views/pages/employee.html",
+        controller:'employee'
     })
     .when("/demo", {
         templateUrl : "views/pages/demopage.html",

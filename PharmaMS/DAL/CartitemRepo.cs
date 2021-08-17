@@ -40,6 +40,7 @@ namespace DAL
             oldData.cart_id = ci.cart_id;
             oldData.med_id = ci.med_id;
             oldData.quantity = ci.quantity;
+            context.SaveChanges();
         }
     }
 }
