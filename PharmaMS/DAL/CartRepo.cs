@@ -29,6 +29,19 @@ namespace DAL
             var data = context.Carts.FirstOrDefault(e => e.id == id);
             return data;
         }
+        public static void DeleteCart(Cart id)
+        {
+            context.Carts.Remove(id);
+            context.SaveChanges();
+        }
+        public static void UpdateCartInfo(Cart med)
+        {
+            var oldData = (from a in context.Carts where a.id == med.id select a).FirstOrDefault();
+            oldData.cartstatus_id = med.customer_id;
+            oldData.cartstatus_id = med.cartstatus_id;
+           
+            context.SaveChanges();
+        }
 
     }
 }
