@@ -45,11 +45,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CartService.cs" />
+    <Compile Include="CartstatuService.cs" />
     <Compile Include="CustomerService.cs" />
     <Compile Include="EmployeeService.cs" />
     <Compile Include="LoginService.cs" />
     <Compile Include="MapperConfig\AutoMapperSettings.cs" />
     <Compile Include="MedicineService.cs" />
+    <Compile Include="OrdersService.cs" />
+    <Compile Include="OrderstatuService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
