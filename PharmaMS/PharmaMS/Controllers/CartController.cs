@@ -39,7 +39,7 @@ namespace PharmaMS.Controllers
             CartService.DeleteCart(id);
         }
 
-        [Route("update/{id}")]
+        [Route("api/cart/update/{id}")]
 
         public void PutCartInfo([FromBody] CartModel n, [FromUri] int id)
         {

@@ -29,14 +29,14 @@ namespace PharmaMS.Controllers
         {
             OrderstatuService.AddOrderstatu(model);
         }
-        [Route("api/Orderstatu/{id}")]
-        [HttpDelete]
+        [Route("api/Orderstatu/Delete/{id}")]
+        
         public void DeleteOrderstatu([FromUri] int id)
         {
             OrderstatuService.DeleteOrderstatu(id);
         }
-        [Route("update/{id}")]
-       [HttpPut]
+        [Route("api/Orderstatu/update/{id}")]
+       
         public void PutOrderstatu([FromBody] OrderstatuModel n, [FromUri] int id)
         {
             OrderstatuModel emInfo = new OrderstatuModel();

@@ -59,6 +59,7 @@
     <Compile Include="Cartitem.cs">
       <DependentUpon>PharmaAssist.tt</DependentUpon>
     </Compile>
+    <Compile Include="CartitemRepo.cs" />
     <Compile Include="CartRepo.cs" />
     <Compile Include="Cartstatu.cs">
       <DependentUpon>PharmaAssist.tt</DependentUpon>

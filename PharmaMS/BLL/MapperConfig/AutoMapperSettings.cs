@@ -87,6 +87,12 @@ namespace BLL.MapperConfig
             //Order
             CreateMap<OrderModel, Order>();
             CreateMap<Order, OrderModel>();
+            //cartitem
+            //CreateMap<CartitemModel, CartitemDetail>();
+            // CreateMap<Cart, CartDetail>();
+
+            CreateMap<Cartitem, CartitemModel>();
+            CreateMap<CartitemModel, Cartitem>().ForMember(e=>e.Medicine, sm => sm.Ignore()).ForMember(e => e.Cart, sm => sm.Ignore());
         }
     }
 }

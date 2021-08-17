@@ -29,13 +29,13 @@ namespace PharmaMS.Controllers
         {
             OrdersService.AddOrder(model);
         }
-        [Route("delete/{id}")]
+        [Route("api/Order/delete/{id}")]
         public void DeleteOrders([FromUri] int id)
         {
             OrdersService.DeleteOrders(id);
         }
 
-        [Route("update/{id}")]
+        [Route("api/Order/update/{id}")]
         public void PutOrders([FromBody] OrderModel n, [FromUri] int id)
         {
             OrderModel emInfo = new OrderModel();
