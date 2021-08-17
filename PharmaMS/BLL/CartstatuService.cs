@@ -38,5 +38,10 @@ namespace BLL
             Cartstatu data = CartstatuRepo.GetCartstatu(id);
             CartstatuRepo.DeleteCartstatu(data);
         }
+        public static void UpdateCartstatu(CartstatuModel em)
+        {
+            var data = AutoMapper.Mapper.Map<CartstatuModel, Cartstatu>(em);
+            CartstatuRepo.UpdateCartstatu(data);
+        }
     }
 }

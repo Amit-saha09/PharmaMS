@@ -33,5 +33,12 @@ namespace DAL
             context.Cartstatus.Remove(id);
             context.SaveChanges();
         }
+        public static void UpdateCartstatu(Cartstatu em)
+        {
+            var oldData = (from a in context.Cartstatus where a.id == em.id select a).FirstOrDefault();
+            oldData.status = em.status;
+           
+            context.SaveChanges();
+        }
     }
 }

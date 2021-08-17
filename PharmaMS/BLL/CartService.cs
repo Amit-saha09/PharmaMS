@@ -37,10 +37,18 @@ namespace BLL
             Cart data = CartRepo.GetCart(id);
             CartRepo.DeleteCart(data);
         }
+<<<<<<< HEAD
         public static void UpdateCartInfo(CartModel med)
         {
             var data = AutoMapper.Mapper.Map<CartModel, Cart>(med);
             CartRepo.UpdateCartInfo(data);
+=======
+
+        public static void UpdateCart(CartModel em)
+        {
+            var data = AutoMapper.Mapper.Map<CartModel, Cart>(em);
+            CartRepo.UpdateCart(data);
+>>>>>>> d40c6b51c0213c3393f7f0d0d52b3f332ae94dae
         }
 
     }
