@@ -31,18 +31,16 @@ namespace PharmaMS.Controllers
         {
             CartService.AddCart(model);
         }
-<<<<<<< HEAD
+
         [Route("api/Cart/Delete/{id}")]
-=======
-        [Route("delete/{id}")]
->>>>>>> d40c6b51c0213c3393f7f0d0d52b3f332ae94dae
+
         public void DeleteCart([FromUri] int id)
         {
             CartService.DeleteCart(id);
         }
 
         [Route("update/{id}")]
-<<<<<<< HEAD
+
         public void PutCartInfo([FromBody] CartModel n, [FromUri] int id)
         {
             CartModel medInfo = new CartModel();
@@ -52,17 +50,7 @@ namespace PharmaMS.Controllers
            
 
             CartService.UpdateCartInfo(medInfo);
-=======
-        public void PutCart([FromBody] CartModel n, [FromUri] int id)
-        {
-            CartModel emInfo = new CartModel();
-            emInfo = CartService.GetCart(id);
-            emInfo.cartstatus_id = n.cartstatus_id;
-            emInfo.customer_id = n.customer_id;
-         
 
-            CartService.UpdateCart(emInfo);
->>>>>>> d40c6b51c0213c3393f7f0d0d52b3f332ae94dae
-        }
+       }
     }
 }
