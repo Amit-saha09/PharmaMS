@@ -13,7 +13,7 @@ namespace BEL
         public int quantity { get; set; }
         public string medtype_type { get; set; }
         public int medtype_id { get; set; }
-        public string customer_type { get; set; }
+        public string customer_name { get; set; }
         public int customer_id { get; set; }
         public string requeststatus_status { get; set; }
         public int requeststatus_id { get; set; }

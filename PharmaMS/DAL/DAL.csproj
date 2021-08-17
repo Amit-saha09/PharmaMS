@@ -115,6 +115,7 @@
     <Compile Include="RequestMedicine.cs">
       <DependentUpon>PharmaAssist.tt</DependentUpon>
     </Compile>
+    <Compile Include="RequestMedicineRepo.cs" />
     <Compile Include="Requeststatu.cs">
       <DependentUpon>PharmaAssist.tt</DependentUpon>
     </Compile>

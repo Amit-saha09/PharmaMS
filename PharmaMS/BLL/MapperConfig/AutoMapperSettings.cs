@@ -18,6 +18,11 @@ namespace BLL.MapperConfig
                 .ForMember(e => e.Orders, d => d.Ignore());
             CreateMap<Cart, CartModel>();
             CreateMap<Cart, CartDetail>();
+            CreateMap<RequestMedicineModel, RequestMedicine>()
+                .ForMember(a => a.Customer, b => b.Ignore())
+                .ForMember(a=>a.Medtype, a=>a.Ignore())
+                .ForMember(a => a.Requeststatu, a => a.Ignore());
+
 
 
             CreateMap<LoginModel, Login>()
@@ -55,6 +60,7 @@ namespace BLL.MapperConfig
             CreateMap<EmployeeDetail, Employee>();
             CreateMap<EmployeeModel, EmployeeDetail>();
             CreateMap<EmployeeDetail, EmployeeModel>();
+           
         }
     }
 }

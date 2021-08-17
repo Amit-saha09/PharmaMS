@@ -51,6 +51,7 @@
     <Compile Include="MapperConfig\AutoMapperSettings.cs" />
     <Compile Include="MedicineService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestMedicineService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
