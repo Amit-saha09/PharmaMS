@@ -40,6 +40,15 @@ namespace PharmaMS.Controllers
         {
             CartstatuService.DeleteCartstatu(id);
         }
+        [Route("update/{id}")]
+        public void PutCartstatu([FromBody] CartstatuModel n, [FromUri] int id)
+        {
+            CartstatuModel emInfo = new CartstatuModel();
+            emInfo = CartstatuService.GetCartstatu(id);
+            emInfo.status = n.status;
+
+            CartstatuService.UpdateCartstatu(emInfo);
+        }
 
     }
 }

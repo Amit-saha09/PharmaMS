@@ -29,5 +29,22 @@ namespace PharmaMS.Controllers
         {
             CartService.AddCart(model);
         }
+        [Route("delete/{id}")]
+        public void DeleteCart([FromUri] int id)
+        {
+            CartService.DeleteCart(id);
+        }
+
+        [Route("update/{id}")]
+        public void PutCart([FromBody] CartModel n, [FromUri] int id)
+        {
+            CartModel emInfo = new CartModel();
+            emInfo = CartService.GetCart(id);
+            emInfo.cartstatus_id = n.cartstatus_id;
+            emInfo.customer_id = n.customer_id;
+         
+
+            CartService.UpdateCart(emInfo);
+        }
     }
 }
