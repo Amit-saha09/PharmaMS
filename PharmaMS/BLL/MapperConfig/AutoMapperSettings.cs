@@ -20,6 +20,13 @@ namespace BLL.MapperConfig
             CreateMap<Cart, CartDetail>();
 
 
+            CreateMap<RequestMedicineModel, RequestMedicine>()
+                    .ForMember(a => a.Customer, b => b.Ignore())
+                    .ForMember(a => a.Medtype, a => a.Ignore())
+                    .ForMember(a => a.Requeststatu, a => a.Ignore());
+
+
+
             CreateMap<LoginModel, Login>()
                 .ForMember(e => e.Loginaccess, d => d.Ignore())
                 .ForMember(e => e.Regstatu, d => d.Ignore())

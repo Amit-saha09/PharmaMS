@@ -109,6 +109,7 @@
     <Compile Include="Controllers\MedicineController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\OrderstatuController.cs" />
+    <Compile Include="Controllers\RequsetMedicineController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
