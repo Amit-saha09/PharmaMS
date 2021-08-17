@@ -59,9 +59,11 @@
     <Compile Include="Cartitem.cs">
       <DependentUpon>PharmaAssist.tt</DependentUpon>
     </Compile>
+    <Compile Include="CartRepo.cs" />
     <Compile Include="Cartstatu.cs">
       <DependentUpon>PharmaAssist.tt</DependentUpon>
     </Compile>
+    <Compile Include="CartstatuRepo.cs" />
     <Compile Include="CustomerRepo.cs" />
     <Compile Include="EmployeeRepo.cs" />
     <Compile Include="LoginRepo.cs" />
@@ -90,9 +92,11 @@
     <Compile Include="Order.cs">
       <DependentUpon>PharmaAssist.tt</DependentUpon>
     </Compile>
+    <Compile Include="OrdersRepo.cs" />
     <Compile Include="Orderstatu.cs">
       <DependentUpon>PharmaAssist.tt</DependentUpon>
     </Compile>
+    <Compile Include="OrderstatuRepo.cs" />
     <Compile Include="PharmaAssist.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

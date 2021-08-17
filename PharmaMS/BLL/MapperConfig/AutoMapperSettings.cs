@@ -18,11 +18,6 @@ namespace BLL.MapperConfig
                 .ForMember(e => e.Orders, d => d.Ignore());
             CreateMap<Cart, CartModel>();
             CreateMap<Cart, CartDetail>();
-            CreateMap<RequestMedicineModel, RequestMedicine>()
-                .ForMember(a => a.Customer, b => b.Ignore())
-                .ForMember(a=>a.Medtype, a=>a.Ignore())
-                .ForMember(a => a.Requeststatu, a => a.Ignore());
-
 
 
             CreateMap<LoginModel, Login>()
@@ -60,7 +55,34 @@ namespace BLL.MapperConfig
             CreateMap<EmployeeDetail, Employee>();
             CreateMap<EmployeeModel, EmployeeDetail>();
             CreateMap<EmployeeDetail, EmployeeModel>();
-           
+
+            //cart status
+            CreateMap<CartstatuModel, Cartstatu>();//ForMember(e => e.Carts, sm =>sm.Ignore());
+
+            CreateMap<Cartstatu, CartstatuDetail>();
+            CreateMap<Cartstatu, CartstatuModel>();
+            CreateMap<CartstatuModel, CartstatuDetail>();
+
+            //cart
+            CreateMap<Cart, CartModel>();//.ForMember(e => e.customer_id, sm => sm.Ignore()).ForMember(e => e.cartstatus_id, sm => sm.Ignore());
+            CreateMap<CartModel, Cart>().ForMember(e => e.Customer, sm => sm.Ignore()).ForMember(e => e.Cartstatu, sm => sm.Ignore());
+            // .ForMember(e => e.customer_id, sm => sm.Ignore());//.ForMember(e => e.cartstatus_id, sm => sm.Ignore());
+
+
+            CreateMap<CartModel, CartDetail>();
+            CreateMap<Cart, CartDetail>();
+            // CreateMap<Cart, CartModel>();
+            // CreateMap<CartModel, Cart>();
+
+            //Order status
+            CreateMap<OrderstatuModel, Orderstatu>();
+
+            CreateMap<Orderstatu, OrderstatuDetail>();
+            CreateMap<Orderstatu, OrderstatuModel>();
+            CreateMap<OrderstatuModel, OrderstatuDetail>();
+            //Order
+            CreateMap<OrderModel, Order>();
+            CreateMap<Order, OrderModel>();
         }
     }
 }
