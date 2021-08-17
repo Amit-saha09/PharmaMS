@@ -27,5 +27,16 @@ namespace BLL
             var or = AutoMapper.Mapper.Map<List<Order>, List<OrderModel>>(data);
             return or;
         }
+        public static void DeleteOrders(int id)
+        {
+            Order data = OrdersRepo.GetOrder(id);
+            OrdersRepo.DeleteOrders(data);
+        }
+
+        public static void UpdateOrders(OrderModel em)
+        {
+            var data = AutoMapper.Mapper.Map<OrderModel, Order>(em);
+            OrdersRepo.UpdateOrders(data);
+        }
     }
 }

@@ -29,5 +29,24 @@ namespace PharmaMS.Controllers
         {
             OrdersService.AddOrder(model);
         }
+        [Route("delete/{id}")]
+        public void DeleteOrders([FromUri] int id)
+        {
+            OrdersService.DeleteOrders(id);
+        }
+
+        [Route("update/{id}")]
+        public void PutOrders([FromBody] OrderModel n, [FromUri] int id)
+        {
+            OrderModel emInfo = new OrderModel();
+            emInfo = OrdersService.GetOrder(id);
+            emInfo. cart_id= n.cart_id;
+            emInfo.employee_id = n.employee_id;
+            emInfo.orderstatus_id= n.orderstatus_id;
+          
+
+
+            OrdersService.UpdateOrders(emInfo);
+        }
     }
 }

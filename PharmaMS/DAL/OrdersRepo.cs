@@ -28,6 +28,19 @@ namespace DAL
             var data = context.Orders.FirstOrDefault(e => e.id == id);
             return data;
         }
-
+        public static void DeleteOrders(Order id)
+        {
+            context.Orders.Remove(id);
+            context.SaveChanges();
+        }
+        public static void UpdateOrders(Order em)
+        {
+            var oldData = (from a in context.Orders where a.id == em.id select a).FirstOrDefault();
+            oldData.appx_del_date = em.appx_del_date;
+            oldData.cart_id = em.cart_id;
+            oldData.employee_id = em.employee_id;
+            oldData.orderstatus_id = em.orderstatus_id;
+            context.SaveChanges();
+        }
     }
 }

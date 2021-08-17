@@ -28,5 +28,16 @@ namespace DAL
             var data = context.Orderstatus.FirstOrDefault(e => e.id == id);
             return data;
         }
+        public static void DeleteOrderstatu(Orderstatu id)
+        {
+            context.Orderstatus.Remove(id);
+            context.SaveChanges();
+        }
+        public static void UpdateOrderstatu(Orderstatu em)
+        {
+            var oldData = (from a in context.Orderstatus where a.id == em.id select a).FirstOrDefault();
+            oldData.status = em.status;
+            context.SaveChanges();
+        }
     }
 }
