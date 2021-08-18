@@ -10,6 +10,30 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         
     })
 
+    .when("/customerregister", {
+        templateUrl : "views/pages/customerregister.html",
+        controller:"customerregister"
+        
+    })
+
+    .when("/customerprofile", {
+        templateUrl : "views/pages/customerprofile.html",
+        controller:"customerprofile"
+        
+    })
+
+    .when("/employeeprofile", {
+        templateUrl : "views/pages/employeeprofile.html",
+        controller:"employeeprofile"
+        
+    })
+
+    .when("/medicinedetails", {
+        templateUrl : "views/pages/medicinedetails.html",
+        controller:"medicinedetails"
+        
+    })
+
     .when("/emADD", {
         templateUrl : "views/pages/emADD.html",
         controller:"emADD"
