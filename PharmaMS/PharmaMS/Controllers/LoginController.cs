@@ -54,6 +54,14 @@ namespace PharmaMS.Controllers
             lc.loginaccess_id = 1;
             LoginService.AddUser(lc);
         }
+        [Route("user/customer/add")]
+        public void AddCustomerr([FromBody] LoginCustomer cu)
+        {
+            cu.usertype_id = 4;
+            cu.regstatus_id = 1;
+            cu.loginaccess_id = 1;
+            LoginService.AddCustomerr(cu);
+        }
 
         //Only for customer reagistration
         [Route("user/add/registration")]
