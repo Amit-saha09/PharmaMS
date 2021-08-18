@@ -4,8 +4,15 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
 
     $routeProvider
     .when("/", {
-        templateUrl : "views/pages/employee.html",
-        controller:'employee'
+        templateUrl : "views/pages/emADD.html",
+        controller:"emADD"
+        
+    })
+
+    .when("/emADD", {
+        templateUrl : "views/pages/emADD.html",
+        controller:"emADD"
+        
     })
     .when("/demo", {
         templateUrl : "views/pages/demopage.html",

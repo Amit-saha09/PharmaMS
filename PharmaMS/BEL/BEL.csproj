@@ -52,7 +52,7 @@
     <Compile Include="EmployeeModel.cs" />
     <Compile Include="LoginaccessDetail.cs" />
     <Compile Include="LoginaccessModel.cs" />
-    <Compile Include="LoginDetail.cs" />
+    <Compile Include="LoginCustomer.cs" />
     <Compile Include="LoginModel.cs" />
     <Compile Include="MedicineDetail.cs" />
     <Compile Include="MedicineModel.cs" />

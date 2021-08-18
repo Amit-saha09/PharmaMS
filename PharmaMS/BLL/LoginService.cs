@@ -31,10 +31,32 @@ namespace BLL
             return data;
         }
 
-        public static void AddUser(LoginModel n)
+        public static void AddUser(LoginCustomer lc)
         {
-            var data = AutoMapper.Mapper.Map<LoginModel, Login>(n);
-            LoginRepo.AddUser(data);
+            Login n = new Login();
+            n.email = lc.email;
+            n.password = lc.password;
+            n.loginaccess_id = lc.loginaccess_id;
+            n.regstatus_id = lc.regstatus_id;
+            n.usertype_id = lc.usertype_id;
+           // var data = AutoMapper.Mapper.Map<LoginModel, Login>(n);
+            LoginRepo.AddUser(n);
+
+            var logid = LoginRepo.GetUserLogin(n.email, n.password);
+            var employe = new Employee();
+            employe.name = lc.name;
+            employe.dob = lc.dob;
+            employe.bloodgroup = lc.bloodgroup;
+            employe.contact = lc.contact;
+            employe.gender = lc.gender;
+            employe.address = lc.address;
+            employe.salary = lc.salary;
+            employe.login_id = logid.id;
+
+            EmployeeRepo.AddEmployee(employe);
+
+
+
         }
 
         public static void UpdateUserInfo(LoginModel u)

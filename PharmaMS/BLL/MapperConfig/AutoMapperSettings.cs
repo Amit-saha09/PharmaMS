@@ -31,8 +31,8 @@ namespace BLL.MapperConfig
                 .ForMember(e => e.Usertype, d => d.Ignore());
 
             CreateMap<Login, LoginModel>();
-            CreateMap<Login, LoginDetail>();
-            CreateMap<LoginModel, LoginDetail>();
+            CreateMap<Login, LoginCustomer>();
+            CreateMap<LoginModel, LoginCustomer>();
 
             /* Do Not Delete
             CreateMap<Login, UsertypeModel>();

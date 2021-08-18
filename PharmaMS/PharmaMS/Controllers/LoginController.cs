@@ -32,8 +32,8 @@ namespace PharmaMS.Controllers
         }
         */
 
-       
-       
+
+        [Route("get/user")]
         public LoginModel GetLogin(LoginModel user)
         {
             return LoginService.GetLogin(user);
@@ -47,23 +47,23 @@ namespace PharmaMS.Controllers
 
         //Only for employee adding
         [Route("user/add")]
-        public void AddUser([FromBody]LoginModel n)
+        public void AddUser([FromBody]LoginCustomer lc)
         {
-            n.loginaccess_id = 1;
-            n.regstatus_id = 1;
-
-            LoginService.AddUser(n);
+            lc.usertype_id = 2;
+            lc.regstatus_id = 1;
+            lc.loginaccess_id = 1;
+            LoginService.AddUser(lc);
         }
 
         //Only for customer reagistration
         [Route("user/add/registration")]
-        public void AddRegistration([FromBody] LoginModel n)
-        {
-            n.loginaccess_id = 2;
-            n.regstatus_id = 3;
+       // public void AddRegistration([FromBody] LoginModel n)
+        //{
+       //     n.loginaccess_id = 2;
+       //     n.regstatus_id = 3;
 
-            LoginService.AddUser(n);
-        }
+         //   LoginService.AddUser(n);
+       // }
 
         [Route("user/update/password/{id}")]
         public void PutUserPassword([FromBody]LoginModel n, [FromUri] int id)
