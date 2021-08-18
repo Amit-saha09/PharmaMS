@@ -33,10 +33,10 @@ namespace PharmaMS.Controllers
         */
 
 
-        [Route("get/user")]
-        public LoginModel GetLogin(LoginModel user)
+        [Route("get/{email}/{password}")]
+        public LoginModel GetLogin(string email, string password)
         {
-            return LoginService.GetLogin(user);
+            return LoginService.GetLogin(email,password);
         }
 
         [Route("user")]

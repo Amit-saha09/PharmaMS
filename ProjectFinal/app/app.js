@@ -1,17 +1,24 @@
 var app = angular.module("myApp", ["ngRoute"]);
+var logdata;
 
 app.config(["$routeProvider","$locationProvider",function($routeProvider,$locationProvider) {
 
     $routeProvider
     .when("/", {
-        templateUrl : "views/pages/emADD.html",
-        controller:"emADD"
+        templateUrl : "views/pages/login.html",
+        controller:"login"
         
     })
 
     .when("/emADD", {
         templateUrl : "views/pages/emADD.html",
         controller:"emADD"
+        
+    })
+
+    .when("/login", {
+        templateUrl : "views/pages/login.html",
+        controller:"login"
         
     })
     .when("/demo", {
