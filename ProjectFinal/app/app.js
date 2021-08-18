@@ -6,17 +6,17 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
     .when("/", {
         templateUrl : "views/pages/emADD.html",
         controller:"emADD"
-        
+
     })
 
     .when("/emADD", {
         templateUrl : "views/pages/emADD.html",
         controller:"emADD"
-        
+
     })
-    .when("/demo", {
-        templateUrl : "views/pages/demopage.html",
-        controller: 'demo'
+    .when("/CustomerAdd", {
+        templateUrl : "views/pages/CustomerAdd.html",
+        controller: "CustomerAdd"
     })
     .when("/demo2", {
         templateUrl : "views/pages/demo2.html",
@@ -26,6 +26,10 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         templateUrl : "views/pages/products.html",
         controller: 'products'
     })
+    .when("/demo", {
+        templateUrl : "views/pages/demopage.html",
+        controller: 'demo'
+
     .otherwise({
         redirectTo:"/"
     });

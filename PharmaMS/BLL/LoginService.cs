@@ -39,7 +39,7 @@ namespace BLL
             n.loginaccess_id = lc.loginaccess_id;
             n.regstatus_id = lc.regstatus_id;
             n.usertype_id = lc.usertype_id;
-           // var data = AutoMapper.Mapper.Map<LoginModel, Login>(n);
+            // var data = AutoMapper.Mapper.Map<LoginModel, Login>(n);
             LoginRepo.AddUser(n);
 
             var logid = LoginRepo.GetUserLogin(n.email, n.password);
@@ -54,10 +54,33 @@ namespace BLL
             employe.login_id = logid.id;
 
             EmployeeRepo.AddEmployee(employe);
+        }
+        public static void AddCustomerr(LoginCustomer cu)
+        {
+            Login x = new Login();
+            x.email = cu.email;
+            x.password = cu.password;
+            x.loginaccess_id = cu.loginaccess_id;
+            x.regstatus_id = cu.regstatus_id;
+            x.usertype_id = cu.usertype_id;
+            // var data = AutoMapper.Mapper.Map<LoginModel, Login>(n);
+            LoginRepo.AddUser(x);
 
-
+            var logid = LoginRepo.GetUserLogin(x.email, x.password);
+            var custome = new Customer();
+            custome.name = cu.name;
+            custome.dob = cu.dob;
+            custome.bloodgroup = cu.bloodgroup;
+            custome.contact = cu.contact;
+            custome.gender = cu.gender;
+            custome.address = cu.address;
+            custome.login_id = logid.id;
+            CustomerRepo.AddCustomer(custome);
 
         }
+
+
+        
 
         public static void UpdateUserInfo(LoginModel u)
         {
