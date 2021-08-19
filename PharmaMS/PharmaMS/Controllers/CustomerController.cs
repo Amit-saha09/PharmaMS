@@ -28,8 +28,13 @@ namespace PharmaMS.Controllers
         {
             return CustomerService.GetCustomerById(id);
         }
+        [Route("login/{id}")]
+        [HttpGet]
+        public CustomerModel GetCustomerbyloginID([FromUri] int id)
+        {
+            return CustomerService.GetCustomerByloginId(id);
+        }
 
-      
         [Route("add")]
         [HttpPost]
         public void PostCustomer([FromBody] CustomerModel em)
@@ -44,7 +49,8 @@ namespace PharmaMS.Controllers
         }
 
         [Route("update/{id}")]
-        public void PutCustomerInfo([FromBody] CustomerModel n, [FromUri] int id)
+        [HttpPost]
+        public void UpdateCustomerInfo([FromBody] CustomerModel n, [FromUri] int id)
         {
             CustomerModel emInfo = new CustomerModel();
             emInfo = CustomerService.GetCustomerById(id);

@@ -24,6 +24,7 @@
                             <th>Description</th>
                             <th>MedType Name</th>
                             <th>Medtype Status</th>
+                            <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -35,6 +36,7 @@
                             <td>{{m.description}}</td>
                             <td>{{m.medtype_type}}</td>
                             <td>{{m.medstatu_status}}</td>
+                            <td><a href="#!/medicinedetails" ng-click="setid(m)">Details</a></td>
                             
                           </tr>
                          

@@ -5,6 +5,10 @@ app.controller("medicinelist",function($scope,$http,ajax){
     }
     function error(error){
 
-    }
+    };
+    $scope.setid = function(m){
+     medid=m.id;
+
+  };
 
 });

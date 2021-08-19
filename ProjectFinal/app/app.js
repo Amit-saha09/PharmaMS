@@ -1,12 +1,18 @@
 var app = angular.module("myApp", ["ngRoute"]);
 var logdata;
+var logid;
+var logemail;
+var logpass;
+var logtype;
+var medid;
+
 
 app.config(["$routeProvider","$locationProvider",function($routeProvider,$locationProvider) {
 
     $routeProvider
     .when("/", {
-        templateUrl : "views/pages/customerregister.html",
-        controller:"customerregister"
+        templateUrl : "views/pages/medicinelist.html",
+        controller:"medicinelist"
         
     })
 

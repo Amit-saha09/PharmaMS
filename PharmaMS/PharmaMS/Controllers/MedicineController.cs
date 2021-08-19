@@ -44,12 +44,14 @@ namespace PharmaMS.Controllers
         }
 
         [Route("delete/{id}")]
+        [HttpGet]
         public void DeleteMedicine([FromUri] int id)
         {
             MedicineService.DeleteMedicine(id);
         }
 
         [Route("update/{id}")]
+        [HttpPost]
         public void PutMedicineInfo([FromBody] MedicineModel n, [FromUri] int id)
         {
             MedicineModel medInfo = new MedicineModel();

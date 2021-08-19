@@ -29,7 +29,14 @@ namespace PharmaMS.Controllers
                 return EmployeeService.GetEmployeebyID(id);
             }
 
-            [Route("name/{id}")]
+        [Route("login/{id}")]
+        [HttpGet]
+        public EmployeeModel GetEmployeebyloginID([FromUri] int id)
+        {
+            return EmployeeService.GetEmployeebyloginID(id);
+        }
+
+        [Route("name/{id}")]
             [HttpGet]
             public List<EmployeeModel> GetEmployeeByName([FromUri] string id)
             {
@@ -50,7 +57,8 @@ namespace PharmaMS.Controllers
             }
 
         [Route("update/{id}")]
-        public void PutEmployeeInfo([FromBody] EmployeeModel n, [FromUri] int id)
+        [HttpPost]
+        public void updateEmployeeInfo([FromBody] EmployeeModel n, [FromUri] int id)
         {
             EmployeeModel emInfo = new EmployeeModel();
             emInfo = EmployeeService.GetEmployeebyID(id);
