@@ -5,16 +5,7 @@ app.controller("login",function($scope,ajax,$location){
     $scope.login = function(){
 
       
-        if(email == undefined && password == undefined)
-        {
-         hasError = true;
-         $scope.err_both = "Please input the email and password"
-        }
-      
-      
-        
-
-        if(!hasError){
+       
          
             var email= $scope.email;
             var password= $scope.password;
@@ -22,10 +13,10 @@ app.controller("login",function($scope,ajax,$location){
            function(response){
                 logdata= response.data;
                 if(logdata.email== email && logdata.password== password){
-                    logid= logdata.id;
-                    logemail=logdata.email;
-                    logpass=logdata.password;
-                    logtype=logdata.usertype;
+                   sessionStorage.setItem("userid",logdata.id);
+                   sessionStorage.setItem("useremail",logdata.email);
+                   sessionStorage.setItem("userpass",logdata.password);
+                   sessionStorage.setItem("usertype",logdata.usertype);
                     $location.path("/employeeprofile");
                 }
                 else{
@@ -35,7 +26,7 @@ app.controller("login",function($scope,ajax,$location){
     
            });
       
-        }
+        
     
     };
   });

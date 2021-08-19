@@ -15,6 +15,11 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         controller:"login"
     })
 
+    .when("/requestmedicine", {
+        templateUrl : "views/pages/requestmedicine.html",
+        controller:"requestmedicine"
+    })
+
     .when("/medicinelist", {
 
         templateUrl : "views/pages/medicinelist.html",
