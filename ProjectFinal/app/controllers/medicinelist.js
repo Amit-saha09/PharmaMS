@@ -11,4 +11,14 @@ app.controller("medicinelist",function($scope,$http,ajax){
 
   };
 
+  $scope.search = function(){
+    var name= $scope.name;
+    ajax.get("https://localhost:44397/api/medicines/name/"+name,
+    function(response){
+      $scope.medicine=response.data;
+
+    },function(err){});
+
+ };
+
 });
