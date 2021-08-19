@@ -15,12 +15,12 @@
                       <label class="col-md-12">Name</label>
                       <div class="col-md-12">
 
-                      <input type="text"  ng-model="r.name" class="form-control" required>
+                      <input type="text"  ng-model="r.name" class="form-control" >
                       </div>
 
                       <div class="form-group">
                         <label for="email">Quantity</label>
-                        <input type="number" class="form-control"  ng-model="r.quantity" required autofocus>
+                        <input type="number" class="form-control"  ng-model="r.quantity"  autofocus>
                         <div class="invalid-feedback">
                           Please fill in your email
                         </div>
@@ -28,7 +28,7 @@
 
                       <div class="form-group">
                         <label for="email">Price</label>
-                        <input  type="number" class="form-control"   ng-model="r.price"  required autofocus>
+                        <input  type="number" class="form-control"   ng-model="r.price"   autofocus>
                         <div class="invalid-feedback">
                           Please fill in your email
                         </div>
@@ -36,7 +36,7 @@
 
                       <div class="form-group">
                         <label for="email">Company</label>
-                        <input  type="text" class="form-control"   ng-model="r.company"  required autofocus>
+                        <input  type="text" class="form-control"   ng-model="r.company"   autofocus>
                         <div class="invalid-feedback">
                           Please fill in your email
                         </div>
@@ -44,25 +44,28 @@
 
                       <div class="form-group">
                         <label for="email">Description</label>
-                        <input  type="text" class="form-control"   ng-model="r.description" required autofocus>
+                        <input  type="text" class="form-control"   ng-model="r.description"  autofocus>
                         <div class="invalid-feedback">
                           Please fill in your email
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="email"> Medtype_id</label>
-                        <input  type="number" class="form-control"   ng-model="r.medtype_id" tabindex="1" required autofocus>
+                        <input  type="number" class="form-control"   ng-model="r.medtype_id" tabindex="1"  autofocus>
                         <div class="invalid-feedback">
                           Please fill in your email
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="email">Medstatus_id</label>
-                        <input type="number" class="form-control"   ng-model="r.medstatus_id" tabindex="1" required autofocus>
+                        <input type="number" class="form-control"   ng-model="r.medstatus_id" tabindex="1"  autofocus>
                         <div class="invalid-feedback">
                           Please fill in your email
                         </div>
                       </div>
+
+                      <span class="text-danger">{{err_both}}</span>
+
                       <div class="row">
                         <div class="input-field col s12">
                           <input type="submit" ng-click="addmed(r)" class="waves-button-input">

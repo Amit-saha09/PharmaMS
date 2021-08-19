@@ -12,8 +12,8 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
     $routeProvider
     .when("/", {
 
-        templateUrl : "views/pages/medicinelist.html",
-        controller:"medicinelist"
+        templateUrl : "views/pages/customerprofile.html",
+        controller:"customerprofile"
     })
 
 
