@@ -11,20 +11,10 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
 
     $routeProvider
     .when("/", {
-<<<<<<< HEAD
-        templateUrl : "views/pages/medicinelist.html",
-        controller:"medicinelist"
-=======
-<<<<<<< HEAD
         templateUrl : "views/pages/emADD.html",
         controller:"emADD"
-
-=======
-        templateUrl : "views/pages/customerregister.html",
-        controller:"customerregister"
->>>>>>> 1abfadfa9f1306a551374bd6a7164c10f3a01135
-        
     })
+
 
     .when("/customerregister", {
         templateUrl : "views/pages/customerregister.html",
@@ -48,7 +38,6 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         templateUrl : "views/pages/medicinedetails.html",
         controller:"medicinedetails"
         
->>>>>>> 69bbecba1e6ca2ba61a901e225823b8d3b980f91
     })
 
     .when("/emADD", {
