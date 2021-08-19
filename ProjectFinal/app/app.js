@@ -11,7 +11,6 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
 
     $routeProvider
     .when("/", {
-
         templateUrl : "views/pages/login.html",
         controller:"login"
     })
@@ -21,6 +20,7 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         templateUrl : "views/pages/medicinelist.html",
         controller:"medicinelist"
     })
+       
 
     .when("/passwordchange", {
 
