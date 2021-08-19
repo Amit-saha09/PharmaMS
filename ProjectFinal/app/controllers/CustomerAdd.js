@@ -1,10 +1,10 @@
-app.controller("emADD",function($scope,ajax){
+app.controller("CustomerAdd",function($scope,ajax){
 
 
 
-    $scope.addem = function(p){
+    $scope.addem = function(q){
 
-       ajax.post("https://localhost:44397/api/logins/user/add",p,
+       ajax.post("https://localhost:44397/api/logins/user/add",q,
        function(resp){
 
        },function(err){});
