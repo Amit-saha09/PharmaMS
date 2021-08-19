@@ -5,45 +5,44 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
 
     $routeProvider
     .when("/", {
-<<<<<<< HEAD
-        templateUrl : "views/pages/emADD.html",
-        controller:"emADD"
+        templateUrl : "views/pages/medicineadd.html",
+        controller:"CustomerAdd"
 
-=======
-        templateUrl : "views/pages/customerregister.html",
-        controller:"customerregister"
-        
     })
 
     .when("/customerregister", {
         templateUrl : "views/pages/customerregister.html",
         controller:"customerregister"
-        
+
     })
 
     .when("/customerprofile", {
         templateUrl : "views/pages/customerprofile.html",
         controller:"customerprofile"
-        
+
     })
 
     .when("/employeeprofile", {
         templateUrl : "views/pages/employeeprofile.html",
         controller:"employeeprofile"
-        
+
     })
 
     .when("/medicinedetails", {
         templateUrl : "views/pages/medicinedetails.html",
         controller:"medicinedetails"
-        
->>>>>>> 69bbecba1e6ca2ba61a901e225823b8d3b980f91
+
     })
 
     .when("/emADD", {
         templateUrl : "views/pages/emADD.html",
         controller:"emADD"
-        
+
+    })
+    .when("/medicineadd", {
+        templateUrl : "views/pages/medicineadd.html",
+        controller:"medicineadd"
+
     })
 
     .when("/login", {
