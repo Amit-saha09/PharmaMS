@@ -1,4 +1,4 @@
-app.controller("medicineadd",function($scope,ajax){
+app.controller("medicineadd",function($scope,ajax,$location){
 
 
 
@@ -7,7 +7,9 @@ app.controller("medicineadd",function($scope,ajax){
        ajax.post("https://localhost:44397/api/medicines/add",r,
        function(resp){
 
-       },function(err){});
+       },function(err){
+          
+       });
 
     };
 

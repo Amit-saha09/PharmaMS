@@ -1,5 +1,5 @@
-app.controller("customerprofile",function($scope,ajax,$location){
-  var id= logid;
+app.controller("customerprofile",function($scope,ajax,$location,$cookies){
+  var id= $cookies.get("id");
 
   ajax.get("https://localhost:44397/api/customers/login/"+id,
   function(resp){

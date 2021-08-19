@@ -1,0 +1,98 @@
+<div class="main-content">
+    <section class="section">
+      <div class="section-body">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h4>Export Table</h4>
+              </div>
+              <div class="card-body">
+
+                <form>
+                  <div class="row">
+                    <div class="form-group">
+                      <label class="col-md-12">Name</label>
+                      <div class="col-md-12">
+
+                      <input type="text"  ng-model="r.name" class="form-control" required>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="email">Quantity</label>
+                        <input type="number" class="form-control"  ng-model="r.quantity" required autofocus>
+                        <div class="invalid-feedback">
+                          Please fill in your email
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="email">Price</label>
+                        <input  type="number" class="form-control"   ng-model="r.price"  required autofocus>
+                        <div class="invalid-feedback">
+                          Please fill in your email
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="email">Company</label>
+                        <input  type="text" class="form-control"   ng-model="r.company"  required autofocus>
+                        <div class="invalid-feedback">
+                          Please fill in your email
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="email">Description</label>
+                        <input  type="text" class="form-control"   ng-model="r.description" required autofocus>
+                        <div class="invalid-feedback">
+                          Please fill in your email
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="email"> Medtype_id</label>
+                        <select style="display:block" ng-model="r.medtype_id" class="form-control form-control-line" name="">
+                          <option  value=1>Tablets</option>
+                          <option  value=2>Capsule</option>
+                          <option  value=3>Liquid</option>
+                          <option  value=4>Drop</option>
+                          <option  value=5>Inhaler</option>
+                          <option  value=6>Injection</option>
+                          <option  value=7>Other</option>
+                          
+                        </select>
+                        <div class="invalid-feedback">
+                          Please fill in your email
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Medstatus_id</label>
+                        <select style="display:block" ng-model="r.medstatus_id" class="form-control form-control-line" name="">
+                          <option  value=1>Available</option>
+                          <option  value=2>Stock Out</option>
+                          <option  value=3>Not For Sale</option>
+                         
+                         
+                          
+                        </select>
+                        <div class="invalid-feedback">
+                          Please fill in your email
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input type="submit" ng-click="addmed(r)" class="waves-button-input">
+                          <button ng-click="updatemed(r)">Update</button>
+                          <button ng-click="delete(r)">Delete</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+    </div>

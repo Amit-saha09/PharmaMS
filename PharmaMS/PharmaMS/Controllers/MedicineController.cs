@@ -62,6 +62,7 @@ namespace PharmaMS.Controllers
             medInfo.company = n.company;
             medInfo.description = n.description;
             medInfo.medtype_id = n.medtype_id;
+            medInfo.medstatus_id = n.medstatus_id;
 
             MedicineService.UpdateMedicineInfo(medInfo);
         }

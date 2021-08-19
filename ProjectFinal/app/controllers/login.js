@@ -13,7 +13,7 @@ app.controller("login",function($scope,ajax,$location){
                 logemail=logdata.email;
                 logpass=logdata.password;
                 logtype=logdata.usertype;
-                $location.path("/employeeprofile");
+                $location.path("/medicinelist");
             }
             else{
                 $location.path("/login");
