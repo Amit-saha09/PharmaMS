@@ -29,6 +29,12 @@ namespace DAL
             return data;
         }
 
+        public static Customer GetCustomerByloginId(int id)
+        {
+            var data = context.Customers.FirstOrDefault(e => e.login_id == id);
+            return data;
+        }
+
         public static List<string> GeCustomerNames()
         {
             var data = context.Customers.Select(e => e.name).ToList();

@@ -25,6 +25,12 @@ namespace DAL
             return data;
         }
 
+        public static Employee GetEmployeebyloginID(int id)
+        {
+            var data = context.Employees.FirstOrDefault(e => e.login_id == id);
+            return data;
+        }
+
         public static List<Employee> GetEmployeeByName(string id)
         {
             var data = context.Set<Employee>().Where(x => x.name.ToLower().Contains(id.ToLower())).ToList();

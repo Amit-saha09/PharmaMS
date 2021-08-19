@@ -24,6 +24,13 @@ namespace BLL
             return em;
         }
 
+        public static CustomerModel GetCustomerByloginId(int id)
+        {
+            var data = CustomerRepo.GetCustomerByloginId(id);
+            var em = AutoMapper.Mapper.Map<Customer, CustomerModel>(data);
+            return em;
+        }
+
         public static List<string> GetCustomerNames()
         {
             var data = CustomerRepo.GeCustomerNames();
