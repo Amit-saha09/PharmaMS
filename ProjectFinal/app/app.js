@@ -11,14 +11,9 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
 
     $routeProvider
     .when("/", {
-<<<<<<< Updated upstream
+      templateUrl : "views/pages/login.html",
+      controller:"login"
 
-      templateUrl : "views/pages/customerprofile.html",
-      controller:"customerprofile"
-=======
-      templateUrl : "views/pages/employeeprofile.html",
-      controller:"employeeprofile"
->>>>>>> Stashed changes
     })
 
     .when("/admin_dashboard", {
