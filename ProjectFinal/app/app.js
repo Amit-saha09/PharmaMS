@@ -11,14 +11,9 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
 
     $routeProvider
     .when("/", {
-<<<<<<< HEAD
-        templateUrl : "views/pages/medicineadd.html",
-        controller:"CustomerAdd"
+      templateUrl : "views/pages/medicineadd.html",
+      controller:"medicineadd"
 
-=======
-        templateUrl : "views/pages/medicinelist.html",
-        controller:"medicinelist"
->>>>>>> d3804de90cc9f7d5e442184430d90388cce40830
     })
 
 
@@ -43,11 +38,7 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
     .when("/medicinedetails", {
         templateUrl : "views/pages/medicinedetails.html",
         controller:"medicinedetails"
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> d3804de90cc9f7d5e442184430d90388cce40830
     })
 
     .when("/emADD", {
@@ -66,6 +57,7 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         controller:"login"
 
     })
+
     .when("/demo", {
         templateUrl : "views/pages/demopage.html",
         controller: 'demo'
