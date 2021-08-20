@@ -42,7 +42,7 @@ app.controller("login",function($scope,ajax,$location){
                    sessionStorage.setItem("useremail",logdata.email);
                    sessionStorage.setItem("userpass",logdata.password);
                    sessionStorage.setItem("usertype",logdata.usertype);
-                    $location.path("/customerrequestmedicineview");
+                    $location.path("/customer_dashboard");
                 }
                 else{
                     $location.path("/login");

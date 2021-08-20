@@ -8,8 +8,7 @@ app.controller("adminrequestmedicineview",function($scope,$http,ajax,$location){
     };
     $scope.setid = function(m){
      medid=m.id;
-     $location.path("/requestmedicinedetails");
-
+    
 
   };
 

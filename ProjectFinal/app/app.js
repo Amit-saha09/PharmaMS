@@ -11,8 +11,24 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
 
     $routeProvider
     .when("/", {
-        templateUrl : "views/pages/login.html",
-        controller:"login"
+        templateUrl: "views/pages/login.html",
+        controller: "login"
+    })
+
+    .when("/mycart",{
+        templateUrl: "views/pages/mycart.html",
+        controller: "mycart"
+    })
+
+    .when("/shop",{
+        templateUrl: "views/pages/shop.html",
+        controller: "shop"
+    })
+
+
+    .when("/customer_dashboard",{
+        templateUrl: "views/pages/customer_dashboard.html",
+        controller: "customer_dashboard"
     })
 
     .when("/customerrequestmedicineview",{
