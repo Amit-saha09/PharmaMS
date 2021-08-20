@@ -44,7 +44,7 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         templateUrl : "views/pages/medicinelist.html",
         controller:"medicinelist"
     })
-       
+
 
     .when("/passwordchange", {
 
@@ -93,6 +93,7 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         controller:"login"
 
     })
+
     .when("/demo", {
         templateUrl : "views/pages/demopage.html",
         controller: 'demo'
