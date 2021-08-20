@@ -11,9 +11,14 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
 
     $routeProvider
     .when("/", {
+<<<<<<< Updated upstream
 
       templateUrl : "views/pages/customerprofile.html",
       controller:"customerprofile"
+=======
+      templateUrl : "views/pages/employeeprofile.html",
+      controller:"employeeprofile"
+>>>>>>> Stashed changes
     })
 
     .when("/admin_dashboard", {
@@ -25,7 +30,7 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         templateUrl: "views/pages/manager_dashboard.html",
         controller: "manager_dashboard"
     })
-    
+
     .when("/mycart",{
         templateUrl: "views/pages/mycart.html",
         controller: "mycart"
