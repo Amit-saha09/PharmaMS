@@ -11,13 +11,48 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
 
     $routeProvider
     .when("/", {
-      templateUrl : "views/pages/login.html",
-      controller:"login"
+        templateUrl: "views/pages/login.html",
+        controller: "login"
     })
 
+    .when("/mycart",{
+        templateUrl: "views/pages/mycart.html",
+        controller: "mycart"
+    })
+
+    .when("/shop",{
+        templateUrl: "views/pages/shop.html",
+        controller: "shop"
+    })
+
+
+    .when("/customer_dashboard",{
+        templateUrl: "views/pages/customer_dashboard.html",
+        controller: "customer_dashboard"
+    })
+
+    .when("/customerrequestmedicineview",{
+        templateUrl: "views/pages/customerrequestmedicineview.html",
+        controller: "customerrequestmedicineview"
+    })
     .when("/requestmedicine", {
         templateUrl : "views/pages/requestmedicine.html",
         controller:"requestmedicine"
+    })
+
+    .when("/adminrequestmedicineview", {
+        templateUrl : "views/pages/adminrequestmedicineview.html",
+        controller:"adminrequestmedicineview"
+    })
+
+    .when("/managerrequstmedicineview", {
+        templateUrl : "views/pages/managerrequstmedicineview.html",
+        controller:"managerrequstmedicineview"
+    })
+
+    .when("/requestmedicinedetails", {
+        templateUrl : "views/pages/requestmedicinedetails.html",
+        controller:"requestmedicinedetails"
     })
 
     .when("/medicinelist", {
