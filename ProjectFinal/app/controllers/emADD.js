@@ -1,4 +1,6 @@
 app.controller("emADD",function($scope,ajax){
+   $scope.myVar= sessionStorage.getItem("usertype");
+
 
  
    //$scope.p = {};

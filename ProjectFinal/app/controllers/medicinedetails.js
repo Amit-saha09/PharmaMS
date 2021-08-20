@@ -3,6 +3,8 @@
 
 
 app.controller("medicinedetails",function($scope,$http,ajax,$location){
+  $scope.myVar= sessionStorage.getItem("usertype");
+
     var id= medid;
     ajax.get("https://localhost:44397/api/medicines/"+id,success,error);
     function success(response){

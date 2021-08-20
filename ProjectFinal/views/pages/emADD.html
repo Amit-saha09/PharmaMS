@@ -1,3 +1,19 @@
+<div ng-switch="myVar">
+  <div ng-switch-when="ADMIN">
+      <div ng-include="'views/inc/side_nav_admin.html'"></div>
+  </div>
+  <div ng-switch-when="MANAGER">
+      <div ng-include="'views/inc/side_nav_manager.html'"></div>
+  </div>
+  <div ng-switch-when="CUSTOMER">
+      <div ng-include="'views/inc/side_nav_customer.html'"></div>
+   
+  </div>
+  <div ng-switch-default>
+   
+  </div>
+</div>
+
 <div class="main-content">
     <section class="section">
       <div class="section-body">

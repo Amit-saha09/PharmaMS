@@ -41,8 +41,24 @@ app.controller("login",function($scope,ajax,$location){
                    sessionStorage.setItem("userid",logdata.id);
                    sessionStorage.setItem("useremail",logdata.email);
                    sessionStorage.setItem("userpass",logdata.password);
-                   sessionStorage.setItem("usertype",logdata.usertype);
-                    $location.path("/customer_dashboard");
+                   if(logdata.usertype_id==1){
+                       var admin="ADMIN";
+                       sessionStorage.setItem("usertype",admin);
+                       $location.path("/admin_dashboard")
+                   }
+                   else if(logdata.usertype_id==2){
+                       var manager="MANAGER";
+                       sessionStorage.setItem("usertype",manager);
+                       $location.path("/manager_dashboard")
+                   }
+                   else {
+                    var customer="CUSTOMER";
+                    sessionStorage.setItem("usertype",customer);
+                    $location.path("/customer_dashboard")
+                }
+               
+                  
+                  
                 }
                 else{
                     $location.path("/login");

@@ -15,6 +15,16 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
       controller:"medicineadd"
     })
 
+    .when("/admin_dashboard", {
+        templateUrl: "views/pages/admin_dashboard.html",
+        controller: "admin_dashboard"
+    })
+
+    .when("/manager_dashboard", {
+        templateUrl: "views/pages/manager_dashboard.html",
+        controller: "manager_dashboard"
+    })
+    
     .when("/mycart",{
         templateUrl: "views/pages/mycart.html",
         controller: "mycart"
