@@ -11,9 +11,26 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
 
     $routeProvider
     .when("/", {
-      templateUrl : "views/pages/medicineadd.html",
-      controller:"medicineadd"
+        templateUrl : "views/pages/login.html",
+        controller:"login"
+    })
 
+    .when("/requestmedicine", {
+        templateUrl : "views/pages/requestmedicine.html",
+        controller:"requestmedicine"
+    })
+
+    .when("/medicinelist", {
+
+        templateUrl : "views/pages/medicinelist.html",
+        controller:"medicinelist"
+    })
+
+
+    .when("/passwordchange", {
+
+        templateUrl : "views/pages/passwordchange.html",
+        controller:"passwordchange"
     })
 
 

@@ -39,7 +39,7 @@ namespace PharmaMS.Controllers
             return LoginService.GetLogin(email,password);
         }
 
-        [Route("user")]
+        [Route("user/get/{id}")]
         public LoginModel GetLoginByID([FromUri] int id)
         {
             return LoginService.GetLoginByID(id);
@@ -64,7 +64,7 @@ namespace PharmaMS.Controllers
         }
 
         //Only for customer reagistration
-        [Route("user/add/registration")]
+      //  [Route("user/add/registration")]
        // public void AddRegistration([FromBody] LoginModel n)
         //{
        //     n.loginaccess_id = 2;
@@ -74,7 +74,8 @@ namespace PharmaMS.Controllers
        // }
 
         [Route("user/update/password/{id}")]
-        public void PutUserPassword([FromBody]LoginModel n, [FromUri] int id)
+        [HttpPost]
+        public void UserPassword([FromBody]LoginModel n, [FromUri] int id)
         {
             LoginModel userInfo = new LoginModel();
             userInfo = LoginService.GetLoginByID(id);
