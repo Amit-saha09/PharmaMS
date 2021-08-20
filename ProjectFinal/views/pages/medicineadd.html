@@ -59,7 +59,7 @@
                           <option  value=5>Inhaler</option>
                           <option  value=6>Injection</option>
                           <option  value=7>Other</option>
-                          
+
                         </select>
                         <div class="invalid-feedback">
                           Please fill in your email
@@ -71,16 +71,29 @@
                           <option  value=1>Available</option>
                           <option  value=2>Stock Out</option>
                           <option  value=3>Not For Sale</option>
-                         
-                         
-                          
+
+
+
                         </select>
                         <div class="invalid-feedback">
                           Please fill in your email
                         </div>
                       </div>
 
-                      <span class="text-danger">{{err_both}}</span>
+                  
+
+                      <p class="text-danger" ng-model="nameError">{{nameError}}</p>
+                      <p class="text-danger" ng-model="quantityError">{{quantityError}}</p>
+                      <p class="text-danger" ng-model="priceError">{{priceError}}</p>
+                      <p class="text-danger" ng-model="companyError">{{companyError}}</p>
+                      <p class="text-danger" ng-model="descriptionError">{{descriptionError}}</p>
+                      <p class="text-danger" ng-model="medtype_idError">{{medtype_idError}}</p>
+                      <p class="text-danger" ng-model="medstatus_idError">{{medstatus_idError}}</p>
+
+
+
+
+
 
                       <div class="row">
                         <div class="input-field col s12">
