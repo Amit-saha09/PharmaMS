@@ -1,4 +1,6 @@
 app.controller("mycart",function($scope,$http,ajax,$location){
+  $scope.myVar= sessionStorage.getItem("usertype");
+
     var cus2id= sessionStorage.getItem("ownid");
     var cart= sessionStorage.getItem("cartid");
     ajax.get("https://localhost:44397/api/Cartitem/GetAll/"+cart,success,error);

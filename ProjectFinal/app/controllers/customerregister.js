@@ -1,4 +1,6 @@
 app.controller("customerregister",function($scope,ajax,$location){
+    $scope.myVar= sessionStorage.getItem("usertype");
+
 
 
 

@@ -1,4 +1,6 @@
 app.controller("customer_dashboard",function($scope,$http,ajax,$location){
+  $scope.myVar= sessionStorage.getItem("usertype");
+
    
     var id= sessionStorage.getItem("userid");
     ajax.get("https://localhost:44397/api/customers/login/"+id,

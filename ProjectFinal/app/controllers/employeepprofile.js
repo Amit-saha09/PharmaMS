@@ -1,4 +1,6 @@
 app.controller("employeeprofile",function($scope,ajax,$location){
+  $scope.myVar= sessionStorage.getItem("usertype");
+
     var id= sessionStorage.getItem("userid");
 
     ajax.get("https://localhost:44397/api/employees/login/"+id,

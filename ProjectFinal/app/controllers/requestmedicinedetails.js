@@ -1,4 +1,6 @@
 app.controller("requestmedicinedetails",function($scope,$http,ajax,$location){
+  $scope.myVar= sessionStorage.getItem("usertype");
+
     var id= medid;
     ajax.get("https://localhost:44397/api/requestmedicines/"+id,success,error);
     function success(response){

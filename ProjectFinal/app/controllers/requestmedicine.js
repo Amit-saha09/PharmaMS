@@ -1,4 +1,6 @@
 app.controller("requestmedicine",function($scope,ajax,$location){
+  $scope.myVar= sessionStorage.getItem("usertype");
+
 
    var id= sessionStorage.getItem("userid");
 
