@@ -6,7 +6,32 @@ app.controller("login",function($scope,ajax,$location){
 
       
        
-         
+          $scope.usernameError = "";
+        $scope.passwordError = "";
+
+        var hasError = false;
+
+      
+      
+        function validation(){
+            if($scope.email == undefined)
+            {
+                $scope.usernameError = "username";
+                hasError = true;
+            }else if($scope.password == undefined)
+            {
+                $scope.passwordError = "password";
+                hasError = true;
+            }
+        }
+
+    
+      
+      
+        validation();
+
+
+         if(!hasError){
             var email= $scope.email;
             var password= $scope.password;
            ajax.get("https://localhost:44397/api/logins/get/"+email+"/"+password,
@@ -17,7 +42,7 @@ app.controller("login",function($scope,ajax,$location){
                    sessionStorage.setItem("useremail",logdata.email);
                    sessionStorage.setItem("userpass",logdata.password);
                    sessionStorage.setItem("usertype",logdata.usertype);
-                    $location.path("/employeeprofile");
+                    $location.path("/customerrequestmedicineview");
                 }
                 else{
                     $location.path("/login");
@@ -26,24 +51,7 @@ app.controller("login",function($scope,ajax,$location){
     
            });
       
-        
+        }
     
     };
   });
-
-
-
-
-  /* var hasError = false;
-       if(email == undefined)
-       {
-           hasError = true;
-           $scope.err_email = "Please input the email"
-       }else if(password == undefined){
-        hasError = true;
-        $scope.err_password = "Please input the password"
-       }else if(email == undefined && password == undefined)
-       {
-        hasError = true;
-        $scope.err_both = "Please input the email and password"
-       }*/

@@ -1,23 +1,26 @@
 app.controller("requestmedicine",function($scope,ajax,$location){
 
-   var id= logid;
+   var id= sessionStorage.getItem("userid");
+
 
    ajax.get("https://localhost:44397/api/customers/login/"+id,
   function(resp){
-    $scope.r=resp.data;
+    logdata=resp.data;
+    sessionStorage.setItem("ownid",logdata.id);
   },
   function(err){
 
   });
  
      $scope.addremed= function(r){
-         r.customer_id=customer.id;
-         r.requeststatus_id= 3;
- 
+         r.customer_id=sessionStorage.getItem("ownid");
+         r.requeststatus_id=3;
+        
  
      
         ajax.post("https://localhost:44397/api/requestmedicines/add",r,
         function(resp){
+
  
         },function(err){
 

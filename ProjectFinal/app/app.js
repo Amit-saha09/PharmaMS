@@ -15,9 +15,28 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         controller:"login"
     })
 
+    .when("/customerrequestmedicineview",{
+        templateUrl: "views/pages/customerrequestmedicineview.html",
+        controller: "customerrequestmedicineview"
+    })
     .when("/requestmedicine", {
         templateUrl : "views/pages/requestmedicine.html",
         controller:"requestmedicine"
+    })
+
+    .when("/adminrequestmedicineview", {
+        templateUrl : "views/pages/adminrequestmedicineview.html",
+        controller:"adminrequestmedicineview"
+    })
+
+    .when("/managerrequstmedicineview", {
+        templateUrl : "views/pages/managerrequstmedicineview.html",
+        controller:"managerrequstmedicineview"
+    })
+
+    .when("/requestmedicinedetails", {
+        templateUrl : "views/pages/requestmedicinedetails.html",
+        controller:"requestmedicinedetails"
     })
 
     .when("/medicinelist", {
