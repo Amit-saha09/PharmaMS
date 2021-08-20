@@ -11,8 +11,13 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
 
     $routeProvider
     .when("/", {
+<<<<<<< Updated upstream
       templateUrl : "views/pages/medicineadd.html",
       controller:"medicineadd"
+=======
+        templateUrl: "views/pages/CustomerAdd.html",
+        controller: "CustomerAdd"
+>>>>>>> Stashed changes
     })
 
     .when("/admin_dashboard", {

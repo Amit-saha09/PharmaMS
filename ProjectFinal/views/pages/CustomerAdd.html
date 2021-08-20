@@ -32,6 +32,7 @@
                       <div class="col-md-12">
 
                       <input type="text"  ng-model="q.name" class="form-control form-control-line" >
+                      <p class="text-danger" ng-model="nameError">{{nameError}}</p>
                       </div>
 
                     </div>
@@ -99,10 +100,22 @@
                       <label for="email">Password</label>
                       <input type="text" class="form-control"   ng-model="q.password" tabindex="1"  autofocus>
                       <div class="invalid-feedback">
-                        <span class="text-danger">{{err_both}}</span>
+                        
                         Please fill in your email
                       </div>
                     </div>
+
+                        
+                   <!-- <p class="text-danger" ng-model="nameError">{{nameError}}</p>
+                    <p class="text-danger" ng-model="dobError">{{dobError}}</p>
+                    <p class="text-danger" ng-model="bloodgroupError">{{bloodgroupError}}</p>
+                    <p class="text-danger" ng-model="genderError">{{genderError}}</p>
+                    <p class="text-danger" ng-model="contactError">{{contactError}}</p>
+                    <p class="text-danger" ng-model="addresstError">{{addresstError}}</p>
+                   
+                    <p class="text-danger" ng-model="emailError">{{emailError}}</p>
+                    <p class="text-danger" ng-model="passwordError">{{passwordError}}</p> -->
+
                     <div class="row">
                       <div class="input-field col s12">
                        

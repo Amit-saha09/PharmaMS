@@ -120,7 +120,7 @@ function passwordValidation(password){
       bloodgroupValidation(p.bloodgroup);
       GenderValidation(p.gender);
       ContactValidation(p.contact);
-      addressValidation(p.gender);
+      addressValidation(p.address);
       salaryValidation(p.salary);
       emailValidation(p.email);
       passwordValidation(p.password);

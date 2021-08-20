@@ -2,18 +2,25 @@ app.controller("CustomerAdd",function($scope,ajax){
    $scope.myVar= sessionStorage.getItem("usertype");
 
 
-   $scope.q = {};
- 
-   $scope.addem = function(q){
+   //$scope.q = {};
 
-      var hasError = false;
-      if(q.name == undefined || q.dob == undefined || q.booldgroup == undefined || q.gender == undefined ||
-         q.contact == undefined || q.address == undefined || q.salary == undefined || q.email == undefined ||
-          q.password == undefined)
+   var hasError ;
+
+   function nameValidation(name){
+
+      if(name == "undefined")
       {
-       hasError = true;
-       $scope.err_both = "Please input all";
-      } 
+         $scope.nameError = "Name must be fill";
+         hasError =true;
+      }
+     
+   }
+
+    
+   $scope.addem = function(q){
+   
+      $scope.nameError = "";
+      nameValidation(q.name);
 
       if(!hasError){
        ajax.post("https://localhost:44397/api/logins/user/add",q,
