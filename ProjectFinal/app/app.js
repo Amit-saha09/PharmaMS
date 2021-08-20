@@ -11,8 +11,8 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
 
     $routeProvider
     .when("/", {
-        templateUrl: "views/pages/login.html",
-        controller: "login"
+        templateUrl: "views/pages/emADD.html",
+        controller: "emADD"
     })
 
     .when("/mycart",{
