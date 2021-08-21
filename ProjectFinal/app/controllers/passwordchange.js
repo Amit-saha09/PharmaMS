@@ -3,7 +3,7 @@ app.controller("passwordchange",function($scope,ajax,$location){
 
     var id= sessionStorage.getItem("userid");
   
-    var id= logid;
+    
 
 
     var hasError ;
@@ -57,7 +57,7 @@ app.controller("passwordchange",function($scope,ajax,$location){
         if(!hasError){
        ajax.post("https://localhost:44397/api/logins/user/update/password/"+cusid,p,
        function(resppnse){
-            $location.path("/customer");
+            $location.path("/logout");
        },function(err){});
       }
     };
