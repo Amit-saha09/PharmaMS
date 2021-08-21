@@ -22,7 +22,7 @@ namespace BLL.MapperConfig
                     .ForMember(a => a.Customer, b => b.Ignore())
                     .ForMember(a => a.Medtype, a => a.Ignore())
                     .ForMember(a => a.Requeststatu, a => a.Ignore());
-
+            CreateMap<RequestMedicine, RequestMedicineModel>();
 
 
             CreateMap<LoginModel, Login>()

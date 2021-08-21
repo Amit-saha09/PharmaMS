@@ -7,7 +7,7 @@ app.controller("customerrequestmedicineview",function($scope,$http,ajax,$locatio
     var q = resp.data;
     sessionStorage.setItem("ownid",q.id);
 
-    ajax.get("https://localhost:44397/api/requestmedicines/customer/"+q.id,success,error);
+    ajax.get("https://localhost:44397/api/requestmedicines/"+q.id,success,error);
     function success(response){
       $scope.medicine=response.data;
     }

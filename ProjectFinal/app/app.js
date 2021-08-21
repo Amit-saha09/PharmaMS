@@ -12,13 +12,18 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
     $routeProvider
     .when("/", {
 
-      templateUrl : "views/pages/medicineadd.html",
-      controller:"medicineadd"
+      templateUrl : "views/pages/viewhomepage.html",
+     
     })
 
     .when("/admin_dashboard", {
         templateUrl: "views/pages/admin_dashboard.html",
         controller: "admin_dashboard"
+    })
+
+    .when("/employee", {
+        templateUrl: "views/pages/employee.html",
+        controller: "employee"
     })
 
     .when("/manager_dashboard", {
@@ -64,6 +69,16 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
     .when("/requestmedicinedetails", {
         templateUrl : "views/pages/requestmedicinedetails.html",
         controller:"requestmedicinedetails"
+    })
+
+    .when("/viewhomepage", {
+        templateUrl : "views/pages/viewhomepage.html"
+        
+    })
+
+    .when("/logout", {
+        templateUrl : "views/pages/logout.html",
+        controller:"logout"
     })
 
     .when("/medicinelist", {
@@ -132,6 +147,11 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
     .when("/products", {
         templateUrl : "views/pages/products.html",
         controller: 'products'
+    })
+
+    .when("/customer", {
+        templateUrl : "views/pages/customer.html",
+        controller: 'customer'
     })
     .otherwise({
         redirectTo:"/"

@@ -1,4 +1,4 @@
-app.controller("emADD",function($scope,ajax){
+app.controller("emADD",function($scope,ajax,$location){
    $scope.myVar= sessionStorage.getItem("usertype");
 
 
@@ -132,6 +132,8 @@ function passwordValidation(password){
       if(!hasError){
        ajax.post("https://localhost:44397/api/logins/user/add",p,
        function(resp){
+          $location.path("/employee");
+
 
        },function(err){});
       }

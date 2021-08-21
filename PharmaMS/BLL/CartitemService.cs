@@ -21,9 +21,9 @@ namespace BLL
             var ca = AutoMapper.Mapper.Map<Cartitem, CartitemModel>(data);
             return ca;
         }
-        public static List<CartitemModel> GetAllCartitem()
+        public static List<CartitemModel> GetAllCartitem(int id)
         {
-            var data = CartitemRepo.GetAllCartitems();
+            var data = CartitemRepo.GetAllCartitems(id);
             var ca = AutoMapper.Mapper.Map<List<Cartitem>, List<CartitemModel>>(data);
             return ca;
         }

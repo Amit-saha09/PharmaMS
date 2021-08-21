@@ -1,7 +1,7 @@
 app.controller("passwordchange",function($scope,ajax,$location){
   $scope.myVar= sessionStorage.getItem("usertype");
 
-    var id= logid;
+    var id= sessionStorage.getItem("userid");
   
     ajax.get("https://localhost:44397/api/logins/user/get/"+id,
     function(response){

@@ -15,9 +15,21 @@ namespace DAL
             context = new PharmaAssistEntities1();
         }
 
-        public static List<RequestMedicine> GetAllRequestMedicine()
+        public static List<RequestMedicine> GetAllRequestMedicine(int id)
         {
-            return context.RequestMedicines.ToList();
+            return context.RequestMedicines.Where(x => x.customer_id == id).ToList();
+        }
+        public static List<RequestMedicine> GetAllAdminRequestMedicine()
+        {
+            int a = 3;
+            int b = 1;
+            return context.RequestMedicines.Where(x => x.requeststatus_id == a || x.requeststatus_id == b).ToList();
+        }
+        public static List<RequestMedicine> GetAllManagerRequestMedicine()
+        {
+
+            int b = 1;
+            return context.RequestMedicines.Where(x=>x.requeststatus_id == b).ToList();
         }
 
         public static RequestMedicine GetRequestMedicineByID(int id)
@@ -52,9 +64,8 @@ namespace DAL
             oldData.medtype_id = med.medtype_id;
             oldData.customer_id = med.customer_id;
             oldData.requeststatus_id = med.requeststatus_id;
-          
+
             context.SaveChanges();
         }
-
     }
 }

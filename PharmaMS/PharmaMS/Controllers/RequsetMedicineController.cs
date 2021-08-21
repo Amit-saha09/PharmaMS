@@ -19,11 +19,25 @@ namespace PharmaMS.Controllers
     [RoutePrefix("api/requestmedicines")]
     public class RequestMedicineController : ApiController
     {
-        [Route("")]
+        [Route("{id}")]
         [HttpGet]
-        public List<RequestMedicineModel> GetAllRequestMedicine()
+        public List<RequestMedicineModel> GetAllRequestMedicine(int id)
         {
-            return RequestMedicineService.GetAllRequestMedicine();
+            return RequestMedicineService.GetAllRequestMedicine(id);
+        }
+
+        [Route("admin")]
+        [HttpGet]
+        public List<RequestMedicineModel> GetAllAdminRequestMedicine()
+        {
+            return RequestMedicineService.GetAllAdminRequestMedicine();
+        }
+
+        [Route("manager")]
+        [HttpGet]
+        public List<RequestMedicineModel> GetAllManagerRequestMedicine()
+        {
+            return RequestMedicineService.GetAllManagerRequestMedicine();
         }
 
 

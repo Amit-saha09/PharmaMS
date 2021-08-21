@@ -15,10 +15,10 @@ namespace PharmaMS.Controllers
     {
        // [EnableCorsAttribute("*", "*", "*")]
 
-        [Route("api/Cartitem/GetAll")]
-        public List<CartitemModel> GetAllCartitem()
+        [Route("api/Cartitem/GetAll/{id}")]
+        public List<CartitemModel> GetAllCartitem(int id)
         {
-            return CartitemService.GetAllCartitem();
+            return CartitemService.GetAllCartitem(id);
         }
         [Route("api/Cartitem/{id}")]
         public CartitemModel GetCartitem(int id)

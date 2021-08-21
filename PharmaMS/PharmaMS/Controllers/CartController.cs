@@ -19,12 +19,27 @@ namespace PharmaMS.Controllers
         {
             return CartService.GetAllCarts();
         }
-        [Route("api/Cart/{id}")]
+        [Route("api/Cart/pending/{id}")]
         [HttpGet]
         public CartModel GetCart(int id)
         {
-            return CartService.GetCart(id);
+
+            var p=  CartService.GetCart(id);
+            if (p != null)
+            {
+                return p;
+            }
+            else
+            {
+                var q = new CartModel();
+                q.cartstatus_id = 3;
+                q.customer_id = id;
+                AddCart(q);
+                return CartService.GetCart(id);
+            }
         }
+
+
         [Route("api/Cart/Add")]
         [HttpPost]
         public void AddCart(CartModel model)

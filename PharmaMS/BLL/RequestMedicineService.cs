@@ -10,9 +10,23 @@ namespace BLL
 {
     public class RequestMedicineService
     {
-        public static List<RequestMedicineModel> GetAllRequestMedicine()
+        public static List<RequestMedicineModel> GetAllRequestMedicine(int id)
         {
-            var data = RequestMedicineRepo.GetAllRequestMedicine();
+            var data = RequestMedicineRepo.GetAllRequestMedicine(id);
+            var med = AutoMapper.Mapper.Map<List<RequestMedicine>, List<RequestMedicineModel>>(data);
+            return med;
+        }
+
+        public static List<RequestMedicineModel> GetAllAdminRequestMedicine()
+        {
+            var data = RequestMedicineRepo.GetAllAdminRequestMedicine();
+            var med = AutoMapper.Mapper.Map<List<RequestMedicine>, List<RequestMedicineModel>>(data);
+            return med;
+        }
+
+        public static List<RequestMedicineModel> GetAllManagerRequestMedicine()
+        {
+            var data = RequestMedicineRepo.GetAllManagerRequestMedicine();
             var med = AutoMapper.Mapper.Map<List<RequestMedicine>, List<RequestMedicineModel>>(data);
             return med;
         }

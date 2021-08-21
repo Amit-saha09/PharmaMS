@@ -1,14 +1,13 @@
 <div ng-switch="myVar">
-    <div ng-switch-when="dogs">
-      
+    <div ng-switch-when="ADMIN">
+        <div ng-include="'views/inc/side_nav_admin.html'"></div>
     </div>
-    <div ng-switch-when="tuts">
+    <div ng-switch-when="MANAGER">
+        <div ng-include="'views/inc/side_nav_manager.html'"></div>
+    </div>
+    <div ng-switch-when="CUSTOMER">
+        <div ng-include="'views/inc/side_nav_customer.html'"></div>
      
     </div>
-    <div ng-switch-when="cars">
-     
-    </div>
-    <div ng-switch-default>
-     
-    </div>
+    <div ng-switch-default></div>
 </div>

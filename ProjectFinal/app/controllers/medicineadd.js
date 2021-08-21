@@ -111,6 +111,7 @@ $scope.addmed = function(r){
 if(!hasError){
        ajax.post("https://localhost:44397/api/medicines/add",r,
        function(resp){
+          $location.path("/medicinelist");
 
        },function(err){});
       }

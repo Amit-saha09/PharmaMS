@@ -18,9 +18,9 @@ namespace DAL
             context.Cartitems.Add(model);
             context.SaveChanges();
         }
-        public static List<Cartitem> GetAllCartitems()
+        public static List<Cartitem> GetAllCartitems(int id)
         {
-            var data = context.Cartitems.ToList();
+            var data = context.Cartitems.Where(x=>x.cart_id==id).ToList();
             return data;
         }
         public static Cartitem GetCartitem(int id)
