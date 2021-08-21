@@ -25,11 +25,19 @@ namespace PharmaMS.Controllers
         {
             return CartitemService.GetCartitem(id);
         }
-        [Route("api/Cartitem/Add")]
-        public void AddCartitem(CartitemModel model)
+
+
+        [Route("api/Cartitem/Add/{id}")]
+        public void AddCartitem(MedicineModel model, int id)
         {
-            CartitemService.AddCartitem(model);
+            var p = new CartitemModel();
+            p.cart_id = id;
+            p.med_id = model.id;
+            p.quantity = 1;
+            CartitemService.AddCartitem(p);
         }
+
+
         [Route("api/Cartitem/Delete/{id}")]
 
         public void DeleteCartitem([FromUri] int id)

@@ -19,7 +19,7 @@ namespace PharmaMS.Controllers
     [RoutePrefix("api/requestmedicines")]
     public class RequestMedicineController : ApiController
     {
-        [Route("{id}")]
+        [Route("customer/{id}")]
         [HttpGet]
         public List<RequestMedicineModel> GetAllRequestMedicine(int id)
         {
@@ -78,6 +78,7 @@ namespace PharmaMS.Controllers
 
 
         [Route("update/{id}")]
+        [HttpPost]
         public void PutRequestMedicineInfo([FromBody] RequestMedicineModel n, [FromUri] int id)
         {
             RequestMedicineModel medInfo = new RequestMedicineModel();

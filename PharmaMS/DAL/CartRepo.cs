@@ -27,7 +27,7 @@ namespace DAL
         public static Cart GetCart(int id)
         {
             var a = 3;
-            var data = context.Carts.FirstOrDefault(e => e.id == id && e.cartstatus_id==a);
+            var data = context.Carts.FirstOrDefault(e => e.customer_id == id && e.cartstatus_id==a);
             return data;
         }
         public static void DeleteCart(Cart id)

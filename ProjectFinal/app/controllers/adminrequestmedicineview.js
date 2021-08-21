@@ -9,7 +9,7 @@ app.controller("adminrequestmedicineview",function($scope,$http,ajax,$location){
 
     };
     $scope.setid = function(m){
-     medid=m.id;
+     sessionStorage.setItem("medid",m.id);
     
 
   };
