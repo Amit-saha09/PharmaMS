@@ -3,7 +3,7 @@ app.controller("employeeprofile",function($scope,ajax,$location){
 
     var id= sessionStorage.getItem("userid");
 
-    var hasError ;
+   /* var hasError ;
 
     function nameValidation(name){
        if(name == undefined)
@@ -73,7 +73,7 @@ app.controller("employeeprofile",function($scope,ajax,$location){
              $scope.dobError = "dob must be fill";
              hasError =true;
           }
-    }
+    }*/
 
     ajax.get("https://localhost:44397/api/employees/login/"+id,
     function(resp){
@@ -89,7 +89,7 @@ app.controller("employeeprofile",function($scope,ajax,$location){
 
 
 
-         $scope.updateem = function(q){
+        /*
            $scope.nameError = "";
            $scope.dobError = "";
            $scope.bloodgroupError = "";
@@ -110,12 +110,13 @@ app.controller("employeeprofile",function($scope,ajax,$location){
 
 
 
-         if(!hasError){
+         if(!hasError){*/
        ajax.post("https://localhost:44397/api/employees/update/"+cusid,q,
        function(resp){
             $location.path("/employee");
        },function(err){});
 
-    };
+    
+   };
 
   });

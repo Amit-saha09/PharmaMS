@@ -6,7 +6,7 @@ app.controller("passwordchange",function($scope,ajax,$location){
     
 
 
-    var hasError ;
+   /* var hasError ;
     function emailValidation(email){
       
       
@@ -36,7 +36,7 @@ app.controller("passwordchange",function($scope,ajax,$location){
      hasError =true;
   }
 
-}
+}*/
     ajax.get("https://localhost:44397/api/logins/user/get/"+id,
     function(response){
       $scope.p = response.data;
@@ -47,19 +47,19 @@ app.controller("passwordchange",function($scope,ajax,$location){
   
     $scope.change = function(p){
         var cusid= p.id;
-        $scope.confirmpasswordError ="";
+       /* $scope.confirmpasswordError ="";
         $scope.passwordError ="";
         $scope.emailError = "";
         emailValidation(p.email);
         passwordValidation(p.password);
         confirmpasswordValidation(p.confirmpassword);
 
-        if(!hasError){
+        if(!hasError){*/
        ajax.post("https://localhost:44397/api/logins/user/update/password/"+cusid,p,
        function(resppnse){
             $location.path("/logout");
        },function(err){});
-      }
+      
     };
     
   });

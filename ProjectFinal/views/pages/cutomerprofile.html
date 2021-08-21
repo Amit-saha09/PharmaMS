@@ -7,107 +7,110 @@
   </div>
   <div ng-switch-when="CUSTOMER">
       <div ng-include="'views/inc/side_nav_customer.html'"></div>
-   
+
   </div>
   <div ng-switch-default>
-   
+
   </div>
 </div>
 <div class="main-content">
-  <section class="section">
-    <div class="section-body">
-      <div class="row">
-        <div class="col-12">
-          <div class="card">
-            <div class="card-header">
-              <h4>CUSTOMER'S PROFILE</h4>
-            </div>
-            <div class="card-body">
-
-              <form>
-                <div class="row">
-                  <div class="form-group">
-                    
-                    <div class="col-md-12">
-                      <label for="name">Name</label>
-                      <input type="text" class="form-control" ng-model="r.name"  autofocus>
-                      <div class="invalid-feedback">
-                        Give Customer Name
-                      </div>
-
-                  </div>
-                  <div class="form-group">
-                    <label for="email">Date of Birth: </label>                
-                    <input  type="hidden"  class="form-control"  ng-model="q.dob" tabindex="1" required autofocus>
-                    <div class="invalid-feedback">
-                      Give Date of Birth
-                    </div>
-                  </div>
-                  
-                  <div class="form-group">
-                    <label for="email">Blood Group: </label>
-                    
-                    <input type="hidden"  ng-model="q.bloodgroup">
-                    <div class="invalid-feedback">
-                      Give Blood Group
-                    </div>
-                  </div>
-                 
-
-                  <div class="form-group">
-                    <label for="email">Gender: </label>
-                    
-                    <input type="hidden"  ng-model="q.gender">
-                    <div class="invalid-feedback">
-                      Give Gender
-                    </div>
-                  </div>
+    <section class="section">
+      <div class="section-body">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h4>EMPLOYEE'S PROFILE</h4>
+              </div>
+              <div class="card-body">
                 
+                <form>
+                  <div class="row">
+                    <div class="form-group">
+                      <div class="col-md-12">
 
-                  <div class="form-group">
-                    <label for="email">Number</label>
-                    <input type="text"  class="form-control"  ng-model="q.contact" tabindex="1" required autofocus>
-                    <div class="invalid-feedback">
-                      Give Number
-                    </div>
-                  </div>
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" ng-model="q.name"  autofocus>
+                        <div class="invalid-feedback">
+                          Give Employee Name
+                        </div>
+                    
+                    <div class="form-group">
+                      <label for="email">Date of Birth: </label>
+                      <label class="form-control">{{q.dob}}</label>
 
-                  <div class="form-group">
-                    <label for="email">Address</label>
-                    <input  type="text"  class="form-control"   ng-model="q.address" tabindex="1" required autofocus>
-                    <div class="invalid-feedback">
-                      Give Address
+                      <input  type="hidden"  class="form-control"  ng-model="q.dob" tabindex="1" required autofocus>
+                      <div class="invalid-feedback">
+                        Give Date of Birth
+                      </div>
                     </div>
-                  </div>
+
+                    <div class="form-group">
+                      <label for="email">Blood Group: </label>
+                      <label class="form-control">{{q.bloodgroup}}</label>
+                      
+                      <input type="hidden"  ng-model="q.bloodgroup">
+                      <div class="invalid-feedback">
+                        Give Blood Group
+                      </div>
+                    </div>
+                    
+
+                    <div class="form-group">
+                      <label for="email">Gender: </label>
+                      <label class="form-control">{{q.gender}}</label>
+
+                      <input type="hidden"  ng-model="q.gender">
+                      <div class="invalid-feedback">
+                        Give Gender 
+                      </div>
+                    </div>
+                    
+
+                    <div class="form-group">
+                      <label for="email">Number</label>
+                      <input type="text"  class="form-control"  ng-model="q.contact" tabindex="1" required autofocus>
+                      <div class="invalid-feedback">
+                        Give Contact Number
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="email">Address</label>
+                      <input  type="text"  class="form-control"   ng-model="q.address" tabindex="1" required autofocus>
+                      <div class="invalid-feedback">
+                        Give Address
+                      </div>
+                    </div>
 
                   
-                  <p class="text-danger" ng-model="nameError">{{nameError}}</p>
-                  <p class="text-danger" ng-model="nameError">{{nameError}}</p>
-                  <p class="text-danger" ng-model="dobError">{{dobError}}</p>
-                  <p class="text-danger" ng-model="bloodgroupError">{{bloodgroupError}}</p>
-                  <p class="text-danger" ng-model="genderError">{{genderError}}</p>
-                  <p class="text-danger" ng-model="contactError">{{contactError}}</p>
-                  <p class="text-danger" ng-model="addresstError">{{addresstError}}</p>
-                 
-                  <p class="text-danger" ng-model="emailError">{{emailError}}</p>
-                  <p class="text-danger" ng-model="passwordError">{{passwordError}}</p>
 
 
 
+                                        <p class="text-danger" ng-model="nameError">{{nameError}}</p>
+                                        <p class="text-danger" ng-model="dobError">{{dobError}}</p>
+                                        <p class="text-danger" ng-model="bloodgroupError">{{bloodgroupError}}</p>
+                                        <p class="text-danger" ng-model="genderError">{{genderError}}</p>
+                                        <p class="text-danger" ng-model="contactError">{{contactError}}</p>
+                                        <p class="text-danger" ng-model="addresstError">{{addresstError}}</p>
+                                      
+                                          
 
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input type="submit" ng-click="updatecus(q)" class="waves-button-input">
+
+
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input type="submit" ng-click="updateem(q)" class="waves-button-input">
+                    </div>
                   </div>
-                </div>
-              </form>
+                </form>
+
+              </div>
 
             </div>
-
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
 </div>

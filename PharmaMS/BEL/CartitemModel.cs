@@ -9,6 +9,7 @@ namespace BEL
     public class CartitemModel
     {
         public int id { get; set; }
+        public string medicine_name { get; set; }
         public int med_id { get; set; }
         public int cart_id { get; set; }
         public int quantity { get; set; }

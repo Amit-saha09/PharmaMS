@@ -39,7 +39,7 @@ namespace PharmaMS.Controllers
 
 
         [Route("api/Cartitem/Delete/{id}")]
-
+        [HttpGet]
         public void DeleteCartitem([FromUri] int id)
         {
             CartitemService.DeleteCartitem(id);
