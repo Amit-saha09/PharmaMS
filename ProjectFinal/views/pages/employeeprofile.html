@@ -7,10 +7,10 @@
   </div>
   <div ng-switch-when="CUSTOMER">
       <div ng-include="'views/inc/side_nav_customer.html'"></div>
-   
+
   </div>
   <div ng-switch-default>
-   
+
   </div>
 </div>
 <div class="main-content">
@@ -92,8 +92,16 @@
                       </div>
                     </div>
 
-                   
 
+
+                                        <p class="text-danger" ng-model="nameError">{{nameError}}</p>
+                                        <p class="text-danger" ng-model="dobError">{{dobError}}</p>
+                                        <p class="text-danger" ng-model="bloodgroupError">{{bloodgroupError}}</p>
+                                        <p class="text-danger" ng-model="genderError">{{genderError}}</p>
+                                        <p class="text-danger" ng-model="contactError">{{contactError}}</p>
+                                        <p class="text-danger" ng-model="addresstError">{{addresstError}}</p>
+                                        <p class="text-danger" ng-model="salaryError">{{salaryError}}</p>
+                                          
 
 
 

@@ -11,6 +11,7 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
 
     $routeProvider
     .when("/", {
+     
 
       templateUrl : "views/pages/viewhomepage.html",
      
@@ -30,7 +31,7 @@ app.config(["$routeProvider","$locationProvider",function($routeProvider,$locati
         templateUrl: "views/pages/manager_dashboard.html",
         controller: "manager_dashboard"
     })
-    
+
     .when("/mycart",{
         templateUrl: "views/pages/mycart.html",
         controller: "mycart"
