@@ -1,0 +1,78 @@
+<div ng-switch="myVar">
+  <div ng-switch-when="ADMIN">
+      <div ng-include="'views/inc/side_nav_admin.html'"></div>
+  </div>
+  <div ng-switch-when="MANAGER">
+      <div ng-include="'views/inc/side_nav_manager.html'"></div>
+  </div>
+  <div ng-switch-when="CUSTOMER">
+      <div ng-include="'views/inc/side_nav_customer.html'"></div>
+   
+  </div>
+  <div ng-switch-default>
+   
+  </div>
+</div> 
+ <div class="main-content">
+        <section class="section">
+          <div class="section-body">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Buy Medicine</h4>
+                  </div>
+
+                  <div class="card-body">
+                   
+                  </div>
+
+
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover" id="tableExport" style="width:100%;">
+                        <thead>
+                          <tr>
+                            <th>Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Company</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                            <th>Medicine Status</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         <tr ng-repeat="m in medicine">
+                            <td>{{m.name}}</td>
+                           <td><select style="display:block" ng-model="m.quantity" class="form-control form-control-line" name="">
+                            <option  value=1>1</option>
+                        <option  value=2>2</option>
+                        
+                        </select></td>
+                            <td>{{m.price}}</td>
+                            <td>{{m.company}}</td>
+                            <td>{{m.description}}</td>
+                            <td>{{m.medtype_type}}</td>
+                            <td>{{m.medstatu_status}}</td>
+                            <td><button ng-click="add(m)">Add to Cart</button></td>
+                            
+                          </tr>
+                         
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer class="main-footer">
+        
+      </footer>
+    </div>
+  </div>
+ 

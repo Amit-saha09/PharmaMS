@@ -1,0 +1,79 @@
+<div ng-switch="myVar">
+  <div ng-switch-when="ADMIN">
+      <div ng-include="'views/inc/side_nav_admin.html'"></div>
+  </div>
+  <div ng-switch-when="MANAGER">
+      <div ng-include="'views/inc/side_nav_manager.html'"></div>
+  </div>
+  <div ng-switch-when="CUSTOMER">
+      <div ng-include="'views/inc/side_nav_customer.html'"></div>
+   
+  </div>
+  <div ng-switch-default>
+   
+  </div>
+</div>
+
+<div class="main-content">
+    <section class="section">
+      <div class="section-body">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h4>REQUEST FOR MEDICINE</h4>
+              </div>
+              <div class="card-body">
+
+                <form>
+                  <div class="row">
+                    <div class="form-group">
+                      <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" ng-model="r.name"  required>
+                        <div class="invalid-feedback">
+                          Give Medicine Name
+                        </div>
+                      </div>
+                     
+
+                      <div class="form-group">
+                        <label for="email">Quantity</label>
+                        <input type="number" class="form-control"  ng-model="r.quantity" required autofocus>
+                        <div class="invalid-feedback">
+                          Give Quantity
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="email"> Medicine Type</label>
+                        <select style="display:block" ng-model="r.medtype_id" class="form-control form-control-line" name="">
+                          <option  value=1>Tablets</option>
+                          <option  value=2>Capsule</option>
+                          <option  value=3>Liquid</option>
+                          <option  value=4>Drop</option>
+                          <option  value=5>Inhaler</option>
+                          <option  value=6>Injection</option>
+                          <option  value=7>Other</option>
+                          
+                        </select>
+                        <div class="invalid-feedback">
+                          Give Medicine Type
+                        </div>
+                      </div>
+                     
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input type="submit" ng-click="addremed(r)" class="waves-button-input">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+    </div>

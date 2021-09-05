@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="25e2ac608e7d45c8adcc0947facb4b46" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="PharmaAssistModel.Cartitem" Width="1.5" PointX="12.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmaAssistModel.Cart" Width="1.5" PointX="7.5" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmaAssistModel.Cartstatu" Width="1.5" PointX="5.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmaAssistModel.Customer" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmaAssistModel.Employee" Width="1.5" PointX="5.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmaAssistModel.Loginaccess" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmaAssistModel.Login" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmaAssistModel.Medicine" Width="1.5" PointX="10.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmaAssistModel.Medstatu" Width="1.5" PointX="8.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmaAssistModel.Medtype" Width="1.5" PointX="8.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmaAssistModel.Order" Width="1.5" PointX="9.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmaAssistModel.Orderstatu" Width="1.5" PointX="7.5" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmaAssistModel.Regstatu" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmaAssistModel.RequestMedicine" Width="1.5" PointX="10.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmaAssistModel.Requeststatu" Width="1.5" PointX="8.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmaAssistModel.Usertype" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <AssociationConnector Association="PharmaAssistModel.FK_Cartitems_Carts" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmaAssistModel.FK_Cartitems_Medicines" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmaAssistModel.FK_Carts_Cartstatus" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmaAssistModel.FK_Carts_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmaAssistModel.FK_Orders_Carts" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmaAssistModel.FK_Customers_Logins" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmaAssistModel.FK_RequestMedicines_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmaAssistModel.FK_Employees_Logins" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmaAssistModel.FK_Orders_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmaAssistModel.FK_Logins_Loginaccess" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmaAssistModel.FK_Logins_Regstatus" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmaAssistModel.FK_Logins_Usertypes" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmaAssistModel.FK_Medicines_Medstatus" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmaAssistModel.FK_Medicines_Medtypes" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmaAssistModel.FK_RequestMedicines_Medtypes" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmaAssistModel.FK_Orders_Orderstatus" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmaAssistModel.FK_RequestMedicines_Requeststatus" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

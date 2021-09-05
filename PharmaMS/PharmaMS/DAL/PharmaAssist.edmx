@@ -1,0 +1,1113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PharmaAssistModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cartitems">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="med_id" Type="int" Nullable="false" />
+          <Property Name="cart_id" Type="int" Nullable="false" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Carts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="customer_id" Type="int" Nullable="false" />
+          <Property Name="cartstatus_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cartstatus">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="dob" Type="date" Nullable="false" />
+          <Property Name="bloodgroup" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="gender" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="contact" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="address" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="image" Type="varchar(max)" />
+          <Property Name="login_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="dob" Type="date" Nullable="false" />
+          <Property Name="bloodgroup" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="gender" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="contact" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="address" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="salary" Type="float" Nullable="false" />
+          <Property Name="image" Type="varchar(max)" />
+          <Property Name="login_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Loginaccess">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Logins">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="usertype_id" Type="int" Nullable="false" />
+          <Property Name="loginaccess_id" Type="int" Nullable="false" />
+          <Property Name="regstatus_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Medicines">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+          <Property Name="price" Type="float" Nullable="false" />
+          <Property Name="company" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="description" Type="varchar(max)" />
+          <Property Name="medtype_id" Type="int" Nullable="false" />
+          <Property Name="medstatus_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Medstatus">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Medtypes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cart_id" Type="int" Nullable="false" />
+          <Property Name="orderstatus_id" Type="int" Nullable="false" />
+          <Property Name="employee_id" Type="int" Nullable="false" />
+          <Property Name="appx_del_date" Type="date" />
+        </EntityType>
+        <EntityType Name="Orderstatus">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Regstatus">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RequestMedicines">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+          <Property Name="medtype_id" Type="int" Nullable="false" />
+          <Property Name="customer_id" Type="int" Nullable="false" />
+          <Property Name="requeststatus_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Requeststatus">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usertypes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Cartitems_Carts">
+          <End Role="Carts" Type="Self.Carts" Multiplicity="1" />
+          <End Role="Cartitems" Type="Self.Cartitems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Carts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cartitems">
+              <PropertyRef Name="cart_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cartitems_Medicines">
+          <End Role="Medicines" Type="Self.Medicines" Multiplicity="1" />
+          <End Role="Cartitems" Type="Self.Cartitems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicines">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cartitems">
+              <PropertyRef Name="med_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Carts_Cartstatus">
+          <End Role="Cartstatus" Type="Self.Cartstatus" Multiplicity="1" />
+          <End Role="Carts" Type="Self.Carts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cartstatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Carts">
+              <PropertyRef Name="cartstatus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Carts_Customers">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+          <End Role="Carts" Type="Self.Carts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Carts">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_Logins">
+          <End Role="Logins" Type="Self.Logins" Multiplicity="1" />
+          <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Logins">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="login_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Logins">
+          <End Role="Logins" Type="Self.Logins" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Logins">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="login_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Logins_Loginaccess">
+          <End Role="Loginaccess" Type="Self.Loginaccess" Multiplicity="1" />
+          <End Role="Logins" Type="Self.Logins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Loginaccess">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Logins">
+              <PropertyRef Name="loginaccess_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Logins_Regstatus">
+          <End Role="Regstatus" Type="Self.Regstatus" Multiplicity="1" />
+          <End Role="Logins" Type="Self.Logins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Regstatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Logins">
+              <PropertyRef Name="regstatus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Logins_Usertypes">
+          <End Role="Usertypes" Type="Self.Usertypes" Multiplicity="1" />
+          <End Role="Logins" Type="Self.Logins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usertypes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Logins">
+              <PropertyRef Name="usertype_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Medicines_Medstatus">
+          <End Role="Medstatus" Type="Self.Medstatus" Multiplicity="1" />
+          <End Role="Medicines" Type="Self.Medicines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medstatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Medicines">
+              <PropertyRef Name="medstatus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Medicines_Medtypes">
+          <End Role="Medtypes" Type="Self.Medtypes" Multiplicity="1" />
+          <End Role="Medicines" Type="Self.Medicines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medtypes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Medicines">
+              <PropertyRef Name="medtype_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Carts">
+          <End Role="Carts" Type="Self.Carts" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Carts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="cart_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="employee_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Orderstatus">
+          <End Role="Orderstatus" Type="Self.Orderstatus" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orderstatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="orderstatus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RequestMedicines_Customers">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+          <End Role="RequestMedicines" Type="Self.RequestMedicines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RequestMedicines">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RequestMedicines_Medtypes">
+          <End Role="Medtypes" Type="Self.Medtypes" Multiplicity="1" />
+          <End Role="RequestMedicines" Type="Self.RequestMedicines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medtypes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RequestMedicines">
+              <PropertyRef Name="medtype_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RequestMedicines_Requeststatus">
+          <End Role="Requeststatus" Type="Self.Requeststatus" Multiplicity="1" />
+          <End Role="RequestMedicines" Type="Self.RequestMedicines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Requeststatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RequestMedicines">
+              <PropertyRef Name="requeststatus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PharmaAssistModelStoreContainer">
+          <EntitySet Name="Cartitems" EntityType="Self.Cartitems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Carts" EntityType="Self.Carts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cartstatus" EntityType="Self.Cartstatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Loginaccess" EntityType="Self.Loginaccess" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Logins" EntityType="Self.Logins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Medicines" EntityType="Self.Medicines" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Medstatus" EntityType="Self.Medstatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Medtypes" EntityType="Self.Medtypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orderstatus" EntityType="Self.Orderstatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Regstatus" EntityType="Self.Regstatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RequestMedicines" EntityType="Self.RequestMedicines" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Requeststatus" EntityType="Self.Requeststatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usertypes" EntityType="Self.Usertypes" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Cartitems_Carts" Association="Self.FK_Cartitems_Carts">
+            <End Role="Carts" EntitySet="Carts" />
+            <End Role="Cartitems" EntitySet="Cartitems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cartitems_Medicines" Association="Self.FK_Cartitems_Medicines">
+            <End Role="Medicines" EntitySet="Medicines" />
+            <End Role="Cartitems" EntitySet="Cartitems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Carts_Cartstatus" Association="Self.FK_Carts_Cartstatus">
+            <End Role="Cartstatus" EntitySet="Cartstatus" />
+            <End Role="Carts" EntitySet="Carts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Carts_Customers" Association="Self.FK_Carts_Customers">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Carts" EntitySet="Carts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_Logins" Association="Self.FK_Customers_Logins">
+            <End Role="Logins" EntitySet="Logins" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Logins" Association="Self.FK_Employees_Logins">
+            <End Role="Logins" EntitySet="Logins" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Logins_Loginaccess" Association="Self.FK_Logins_Loginaccess">
+            <End Role="Loginaccess" EntitySet="Loginaccess" />
+            <End Role="Logins" EntitySet="Logins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Logins_Regstatus" Association="Self.FK_Logins_Regstatus">
+            <End Role="Regstatus" EntitySet="Regstatus" />
+            <End Role="Logins" EntitySet="Logins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Logins_Usertypes" Association="Self.FK_Logins_Usertypes">
+            <End Role="Usertypes" EntitySet="Usertypes" />
+            <End Role="Logins" EntitySet="Logins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Medicines_Medstatus" Association="Self.FK_Medicines_Medstatus">
+            <End Role="Medstatus" EntitySet="Medstatus" />
+            <End Role="Medicines" EntitySet="Medicines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Medicines_Medtypes" Association="Self.FK_Medicines_Medtypes">
+            <End Role="Medtypes" EntitySet="Medtypes" />
+            <End Role="Medicines" EntitySet="Medicines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Carts" Association="Self.FK_Orders_Carts">
+            <End Role="Carts" EntitySet="Carts" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Employees" Association="Self.FK_Orders_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Orderstatus" Association="Self.FK_Orders_Orderstatus">
+            <End Role="Orderstatus" EntitySet="Orderstatus" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RequestMedicines_Customers" Association="Self.FK_RequestMedicines_Customers">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="RequestMedicines" EntitySet="RequestMedicines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RequestMedicines_Medtypes" Association="Self.FK_RequestMedicines_Medtypes">
+            <End Role="Medtypes" EntitySet="Medtypes" />
+            <End Role="RequestMedicines" EntitySet="RequestMedicines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RequestMedicines_Requeststatus" Association="Self.FK_RequestMedicines_Requeststatus">
+            <End Role="Requeststatus" EntitySet="Requeststatus" />
+            <End Role="RequestMedicines" EntitySet="RequestMedicines" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PharmaAssistModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cartitem">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="med_id" Type="Int32" Nullable="false" />
+          <Property Name="cart_id" Type="Int32" Nullable="false" />
+          <Property Name="quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cart" Relationship="Self.FK_Cartitems_Carts" FromRole="Cartitems" ToRole="Carts" />
+          <NavigationProperty Name="Medicine" Relationship="Self.FK_Cartitems_Medicines" FromRole="Cartitems" ToRole="Medicines" />
+        </EntityType>
+        <EntityType Name="Cart">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customer_id" Type="Int32" Nullable="false" />
+          <Property Name="cartstatus_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cartitems" Relationship="Self.FK_Cartitems_Carts" FromRole="Carts" ToRole="Cartitems" />
+          <NavigationProperty Name="Cartstatu" Relationship="Self.FK_Carts_Cartstatus" FromRole="Carts" ToRole="Cartstatus" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_Carts_Customers" FromRole="Carts" ToRole="Customers" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Carts" FromRole="Carts" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Cartstatu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Carts" Relationship="Self.FK_Carts_Cartstatus" FromRole="Cartstatus" ToRole="Carts" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dob" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="bloodgroup" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="gender" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contact" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="login_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Carts" Relationship="Self.FK_Carts_Customers" FromRole="Customers" ToRole="Carts" />
+          <NavigationProperty Name="Login" Relationship="Self.FK_Customers_Logins" FromRole="Customers" ToRole="Logins" />
+          <NavigationProperty Name="RequestMedicines" Relationship="Self.FK_RequestMedicines_Customers" FromRole="Customers" ToRole="RequestMedicines" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dob" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="bloodgroup" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="gender" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contact" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="salary" Type="Double" Nullable="false" />
+          <Property Name="image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="login_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Login" Relationship="Self.FK_Employees_Logins" FromRole="Employees" ToRole="Logins" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Employees" FromRole="Employees" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Loginaccess">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Logins" Relationship="Self.FK_Logins_Loginaccess" FromRole="Loginaccess" ToRole="Logins" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="email" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="usertype_id" Type="Int32" Nullable="false" />
+          <Property Name="loginaccess_id" Type="Int32" Nullable="false" />
+          <Property Name="regstatus_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK_Customers_Logins" FromRole="Logins" ToRole="Customers" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_Employees_Logins" FromRole="Logins" ToRole="Employees" />
+          <NavigationProperty Name="Loginaccess" Relationship="Self.FK_Logins_Loginaccess" FromRole="Logins" ToRole="Loginaccess" />
+          <NavigationProperty Name="Regstatu" Relationship="Self.FK_Logins_Regstatus" FromRole="Logins" ToRole="Regstatus" />
+          <NavigationProperty Name="Usertype" Relationship="Self.FK_Logins_Usertypes" FromRole="Logins" ToRole="Usertypes" />
+        </EntityType>
+        <EntityType Name="Medicine">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="quantity" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Double" Nullable="false" />
+          <Property Name="company" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="medtype_id" Type="Int32" Nullable="false" />
+          <Property Name="medstatus_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cartitems" Relationship="Self.FK_Cartitems_Medicines" FromRole="Medicines" ToRole="Cartitems" />
+          <NavigationProperty Name="Medstatu" Relationship="Self.FK_Medicines_Medstatus" FromRole="Medicines" ToRole="Medstatus" />
+          <NavigationProperty Name="Medtype" Relationship="Self.FK_Medicines_Medtypes" FromRole="Medicines" ToRole="Medtypes" />
+        </EntityType>
+        <EntityType Name="Medstatu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Medicines" Relationship="Self.FK_Medicines_Medstatus" FromRole="Medstatus" ToRole="Medicines" />
+        </EntityType>
+        <EntityType Name="Medtype">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Medicines" Relationship="Self.FK_Medicines_Medtypes" FromRole="Medtypes" ToRole="Medicines" />
+          <NavigationProperty Name="RequestMedicines" Relationship="Self.FK_RequestMedicines_Medtypes" FromRole="Medtypes" ToRole="RequestMedicines" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cart_id" Type="Int32" Nullable="false" />
+          <Property Name="orderstatus_id" Type="Int32" Nullable="false" />
+          <Property Name="employee_id" Type="Int32" Nullable="false" />
+          <Property Name="appx_del_date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Cart" Relationship="Self.FK_Orders_Carts" FromRole="Orders" ToRole="Carts" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Orders_Employees" FromRole="Orders" ToRole="Employees" />
+          <NavigationProperty Name="Orderstatu" Relationship="Self.FK_Orders_Orderstatus" FromRole="Orders" ToRole="Orderstatus" />
+        </EntityType>
+        <EntityType Name="Orderstatu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Orderstatus" FromRole="Orderstatus" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Regstatu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Logins" Relationship="Self.FK_Logins_Regstatus" FromRole="Regstatus" ToRole="Logins" />
+        </EntityType>
+        <EntityType Name="RequestMedicine">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="quantity" Type="Int32" Nullable="false" />
+          <Property Name="medtype_id" Type="Int32" Nullable="false" />
+          <Property Name="customer_id" Type="Int32" Nullable="false" />
+          <Property Name="requeststatus_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_RequestMedicines_Customers" FromRole="RequestMedicines" ToRole="Customers" />
+          <NavigationProperty Name="Medtype" Relationship="Self.FK_RequestMedicines_Medtypes" FromRole="RequestMedicines" ToRole="Medtypes" />
+          <NavigationProperty Name="Requeststatu" Relationship="Self.FK_RequestMedicines_Requeststatus" FromRole="RequestMedicines" ToRole="Requeststatus" />
+        </EntityType>
+        <EntityType Name="Requeststatu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="RequestMedicines" Relationship="Self.FK_RequestMedicines_Requeststatus" FromRole="Requeststatus" ToRole="RequestMedicines" />
+        </EntityType>
+        <EntityType Name="Usertype">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Logins" Relationship="Self.FK_Logins_Usertypes" FromRole="Usertypes" ToRole="Logins" />
+        </EntityType>
+        <Association Name="FK_Cartitems_Carts">
+          <End Role="Carts" Type="Self.Cart" Multiplicity="1" />
+          <End Role="Cartitems" Type="Self.Cartitem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Carts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cartitems">
+              <PropertyRef Name="cart_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cartitems_Medicines">
+          <End Role="Medicines" Type="Self.Medicine" Multiplicity="1" />
+          <End Role="Cartitems" Type="Self.Cartitem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicines">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cartitems">
+              <PropertyRef Name="med_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Carts_Cartstatus">
+          <End Role="Cartstatus" Type="Self.Cartstatu" Multiplicity="1" />
+          <End Role="Carts" Type="Self.Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cartstatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Carts">
+              <PropertyRef Name="cartstatus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Carts_Customers">
+          <End Role="Customers" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Carts" Type="Self.Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Carts">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Carts">
+          <End Role="Carts" Type="Self.Cart" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Carts">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="cart_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customers_Logins">
+          <End Role="Logins" Type="Self.Login" Multiplicity="1" />
+          <End Role="Customers" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Logins">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="login_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RequestMedicines_Customers">
+          <End Role="Customers" Type="Self.Customer" Multiplicity="1" />
+          <End Role="RequestMedicines" Type="Self.RequestMedicine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RequestMedicines">
+              <PropertyRef Name="customer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Logins">
+          <End Role="Logins" Type="Self.Login" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Logins">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="login_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Employees">
+          <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="employee_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Logins_Loginaccess">
+          <End Role="Loginaccess" Type="Self.Loginaccess" Multiplicity="1" />
+          <End Role="Logins" Type="Self.Login" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Loginaccess">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Logins">
+              <PropertyRef Name="loginaccess_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Logins_Regstatus">
+          <End Role="Regstatus" Type="Self.Regstatu" Multiplicity="1" />
+          <End Role="Logins" Type="Self.Login" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Regstatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Logins">
+              <PropertyRef Name="regstatus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Logins_Usertypes">
+          <End Role="Usertypes" Type="Self.Usertype" Multiplicity="1" />
+          <End Role="Logins" Type="Self.Login" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usertypes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Logins">
+              <PropertyRef Name="usertype_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Medicines_Medstatus">
+          <End Role="Medstatus" Type="Self.Medstatu" Multiplicity="1" />
+          <End Role="Medicines" Type="Self.Medicine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medstatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Medicines">
+              <PropertyRef Name="medstatus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Medicines_Medtypes">
+          <End Role="Medtypes" Type="Self.Medtype" Multiplicity="1" />
+          <End Role="Medicines" Type="Self.Medicine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medtypes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Medicines">
+              <PropertyRef Name="medtype_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RequestMedicines_Medtypes">
+          <End Role="Medtypes" Type="Self.Medtype" Multiplicity="1" />
+          <End Role="RequestMedicines" Type="Self.RequestMedicine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medtypes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RequestMedicines">
+              <PropertyRef Name="medtype_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Orderstatus">
+          <End Role="Orderstatus" Type="Self.Orderstatu" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orderstatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="orderstatus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RequestMedicines_Requeststatus">
+          <End Role="Requeststatus" Type="Self.Requeststatu" Multiplicity="1" />
+          <End Role="RequestMedicines" Type="Self.RequestMedicine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Requeststatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="RequestMedicines">
+              <PropertyRef Name="requeststatus_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PharmaAssistEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cartitems" EntityType="Self.Cartitem" />
+          <EntitySet Name="Carts" EntityType="Self.Cart" />
+          <EntitySet Name="Cartstatus" EntityType="Self.Cartstatu" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="Loginaccesses" EntityType="Self.Loginaccess" />
+          <EntitySet Name="Logins" EntityType="Self.Login" />
+          <EntitySet Name="Medicines" EntityType="Self.Medicine" />
+          <EntitySet Name="Medstatus" EntityType="Self.Medstatu" />
+          <EntitySet Name="Medtypes" EntityType="Self.Medtype" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="Orderstatus" EntityType="Self.Orderstatu" />
+          <EntitySet Name="Regstatus" EntityType="Self.Regstatu" />
+          <EntitySet Name="RequestMedicines" EntityType="Self.RequestMedicine" />
+          <EntitySet Name="Requeststatus" EntityType="Self.Requeststatu" />
+          <EntitySet Name="Usertypes" EntityType="Self.Usertype" />
+          <AssociationSet Name="FK_Cartitems_Carts" Association="Self.FK_Cartitems_Carts">
+            <End Role="Carts" EntitySet="Carts" />
+            <End Role="Cartitems" EntitySet="Cartitems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cartitems_Medicines" Association="Self.FK_Cartitems_Medicines">
+            <End Role="Medicines" EntitySet="Medicines" />
+            <End Role="Cartitems" EntitySet="Cartitems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Carts_Cartstatus" Association="Self.FK_Carts_Cartstatus">
+            <End Role="Cartstatus" EntitySet="Cartstatus" />
+            <End Role="Carts" EntitySet="Carts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Carts_Customers" Association="Self.FK_Carts_Customers">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Carts" EntitySet="Carts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Carts" Association="Self.FK_Orders_Carts">
+            <End Role="Carts" EntitySet="Carts" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customers_Logins" Association="Self.FK_Customers_Logins">
+            <End Role="Logins" EntitySet="Logins" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RequestMedicines_Customers" Association="Self.FK_RequestMedicines_Customers">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="RequestMedicines" EntitySet="RequestMedicines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Logins" Association="Self.FK_Employees_Logins">
+            <End Role="Logins" EntitySet="Logins" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Employees" Association="Self.FK_Orders_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Logins_Loginaccess" Association="Self.FK_Logins_Loginaccess">
+            <End Role="Loginaccess" EntitySet="Loginaccesses" />
+            <End Role="Logins" EntitySet="Logins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Logins_Regstatus" Association="Self.FK_Logins_Regstatus">
+            <End Role="Regstatus" EntitySet="Regstatus" />
+            <End Role="Logins" EntitySet="Logins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Logins_Usertypes" Association="Self.FK_Logins_Usertypes">
+            <End Role="Usertypes" EntitySet="Usertypes" />
+            <End Role="Logins" EntitySet="Logins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Medicines_Medstatus" Association="Self.FK_Medicines_Medstatus">
+            <End Role="Medstatus" EntitySet="Medstatus" />
+            <End Role="Medicines" EntitySet="Medicines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Medicines_Medtypes" Association="Self.FK_Medicines_Medtypes">
+            <End Role="Medtypes" EntitySet="Medtypes" />
+            <End Role="Medicines" EntitySet="Medicines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RequestMedicines_Medtypes" Association="Self.FK_RequestMedicines_Medtypes">
+            <End Role="Medtypes" EntitySet="Medtypes" />
+            <End Role="RequestMedicines" EntitySet="RequestMedicines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Orderstatus" Association="Self.FK_Orders_Orderstatus">
+            <End Role="Orderstatus" EntitySet="Orderstatus" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RequestMedicines_Requeststatus" Association="Self.FK_RequestMedicines_Requeststatus">
+            <End Role="Requeststatus" EntitySet="Requeststatus" />
+            <End Role="RequestMedicines" EntitySet="RequestMedicines" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PharmaAssistModelStoreContainer" CdmEntityContainer="PharmaAssistEntities1">
+          <EntitySetMapping Name="Cartitems">
+            <EntityTypeMapping TypeName="PharmaAssistModel.Cartitem">
+              <MappingFragment StoreEntitySet="Cartitems">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="med_id" ColumnName="med_id" />
+                <ScalarProperty Name="cart_id" ColumnName="cart_id" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Carts">
+            <EntityTypeMapping TypeName="PharmaAssistModel.Cart">
+              <MappingFragment StoreEntitySet="Carts">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="cartstatus_id" ColumnName="cartstatus_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cartstatus">
+            <EntityTypeMapping TypeName="PharmaAssistModel.Cartstatu">
+              <MappingFragment StoreEntitySet="Cartstatus">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="PharmaAssistModel.Customer">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="dob" ColumnName="dob" />
+                <ScalarProperty Name="bloodgroup" ColumnName="bloodgroup" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="contact" ColumnName="contact" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="login_id" ColumnName="login_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="PharmaAssistModel.Employee">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="dob" ColumnName="dob" />
+                <ScalarProperty Name="bloodgroup" ColumnName="bloodgroup" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="contact" ColumnName="contact" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="login_id" ColumnName="login_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Loginaccesses">
+            <EntityTypeMapping TypeName="PharmaAssistModel.Loginaccess">
+              <MappingFragment StoreEntitySet="Loginaccess">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="PharmaAssistModel.Login">
+              <MappingFragment StoreEntitySet="Logins">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="usertype_id" ColumnName="usertype_id" />
+                <ScalarProperty Name="loginaccess_id" ColumnName="loginaccess_id" />
+                <ScalarProperty Name="regstatus_id" ColumnName="regstatus_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medicines">
+            <EntityTypeMapping TypeName="PharmaAssistModel.Medicine">
+              <MappingFragment StoreEntitySet="Medicines">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="medtype_id" ColumnName="medtype_id" />
+                <ScalarProperty Name="medstatus_id" ColumnName="medstatus_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medstatus">
+            <EntityTypeMapping TypeName="PharmaAssistModel.Medstatu">
+              <MappingFragment StoreEntitySet="Medstatus">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medtypes">
+            <EntityTypeMapping TypeName="PharmaAssistModel.Medtype">
+              <MappingFragment StoreEntitySet="Medtypes">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="PharmaAssistModel.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="cart_id" ColumnName="cart_id" />
+                <ScalarProperty Name="orderstatus_id" ColumnName="orderstatus_id" />
+                <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+                <ScalarProperty Name="appx_del_date" ColumnName="appx_del_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orderstatus">
+            <EntityTypeMapping TypeName="PharmaAssistModel.Orderstatu">
+              <MappingFragment StoreEntitySet="Orderstatus">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Regstatus">
+            <EntityTypeMapping TypeName="PharmaAssistModel.Regstatu">
+              <MappingFragment StoreEntitySet="Regstatus">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RequestMedicines">
+            <EntityTypeMapping TypeName="PharmaAssistModel.RequestMedicine">
+              <MappingFragment StoreEntitySet="RequestMedicines">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="medtype_id" ColumnName="medtype_id" />
+                <ScalarProperty Name="customer_id" ColumnName="customer_id" />
+                <ScalarProperty Name="requeststatus_id" ColumnName="requeststatus_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Requeststatus">
+            <EntityTypeMapping TypeName="PharmaAssistModel.Requeststatu">
+              <MappingFragment StoreEntitySet="Requeststatus">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usertypes">
+            <EntityTypeMapping TypeName="PharmaAssistModel.Usertype">
+              <MappingFragment StoreEntitySet="Usertypes">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
